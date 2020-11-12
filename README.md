@@ -199,29 +199,38 @@ As a user, I want to get information (social links, contact info etc.) about the
 
 ### Strategy
 
-The goal with the application is to provide employers and creative a way to connect.
-The design should fit the purpose and coming from the [materialize](https://materializecss.com/) framework.
-The foundation of the application should be solid with room for improvement for future updates/releases.
+I want to create an e-commerce to sell ugly mugs for people who loves ugly mugs
+The shopper gets the benefit of buying that ugly mug that they love. 
+The shopper gets the benefit of a seamless and secure shopping experience with control of their shopping with e-mail confirmations etc. 
+The site user can easily register an account and view all purchase history and information about the user. 
+The store owner can add, edit and delete products. 
 
 ---
 
 ### Scope
 
-The users should be able to use a fully functioning application for performing CRUD operations and sending an e-mail form.
-At this stage the user will experience a running application with the possibility to perform CRUD operations
-and let others know you are interested in connecting.
+A shopper can view the website on any device including mobile, tablet, desktop.
+A shopper can view products and product details before adding it to the cart.
+A shopper can add, edit and delete products to and from the cart.
+A shopper can find purchase history and orders.
+A shopper can register and edit an account including shipping and billing details.
+A shopper can filter mugs on years / months.
+A shopper can log in and out of the account.
+A shopper can navigate easily and make safe purchases.
+A shopper can't make purchases that are empty and submit forms that doesn't meet all the requirements.
+A store owner can manage products in the backend via staff login.
 
 Future releases may introduce:
-A wider range of functionalities and ways to interact
-The possibility to rate users
-Provide more valuable information and resources
+More interaction with the shoppers and how they can utilize the website (e.g search function when required).
+Use data in fun and valueable ways for the shoppers and the store owners. Ex. show how many mugs each edition sold for.
+Introduce more products and methods to purchase the products e.g introduce subscriptions.
 
 ---
 
 ### Structure
 
-The application has a natural structure with the "home-section" giving a message, in this case welcoming the user to the application and describes how to use it.
-It's easy to navigate to the different sections of the page and perform desired CRUD operations.
+Communication and interactions with the user is central for a site like this. 
+It uses minimal but powerful design to interact with the user in a consistent, predictable, learnable and visible way providing clear and intuitive feedback.
 
 ---
 
@@ -233,8 +242,14 @@ In this [link](https://github.com/robinwesterback/creative-hub/tree/master/wiref
 
 ### Surface
 
-In this [link](https://materializecss.com/) you can find Materialize.
-This application is built using materialize css, components and js.
+In this [link]() you can find the mockups for the website created with [figma]().
+
+#### Fonts
+I used from SF Pro Text and SF Pro Display [Google Fonts]():
+
+#### Colors
+- #111111 - font Colors
+- #222222 - background Colors
 
 [Back to Top](#megapixel-groups-creative-hub)
 ***
