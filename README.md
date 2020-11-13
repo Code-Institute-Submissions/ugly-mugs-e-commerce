@@ -358,10 +358,21 @@ Are there any features that you would like me to implement to improve the applic
 - [JavaScript](https://www.javascript.com/ "JavaScript")
 - [Python](https://www.python.org/ "Python")
 
-### Libraries, frameworks, tools used
-- [Django](https://docs.djangoproject.com/en/3.1/) as python web framework used for rapid development, maintainable, clean design
+---
 
-[Back to Top](#megapixel-groups-creative-hub)
+### Libraries, frameworks, tools used
+- [Django](https://docs.djangoproject.com/en/3.1/ "Django") as python web framework used for rapid development, maintainable, clean design
+- [Psycopg2](https://pypi.org/project/psycopg2/ "Psycopg2") as database adapter for the Python
+- [dj-database-url](https://pypi.org/project/dj-database-url/ "dj-database-url")
+- [Gunicorn](https://gunicorn.org/ "Gunicorn") or Green Unicorn, a WSGI server implementation used to run Python web application
+
+---
+
+### Databases
+- [PostgreSQL](https://www.postgresql.org/ "PostgreSQL") database service provided directly by Heroku
+- [SQlite3](https://www.sqlite.org/index.html "SQlite3") provided by django
+
+[Back to Top](#megapixel-groups-creative-hub) 
 ***
 
 ## Testing

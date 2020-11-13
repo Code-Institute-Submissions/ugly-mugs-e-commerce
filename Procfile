@@ -1,0 +1,1 @@
+web: gunicorn django_ugly_mugs.wsgi:application
