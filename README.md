@@ -352,50 +352,14 @@ Are there any features that you would like me to implement to improve the applic
 
 ## Technologies Used
 
-I used HTML, CSS, Javascript, Python, Flask and MongoDB to build this project.
+### Languages
+- [HTML5](https://html.com/ "HTML")
+- [CSS3](https://www.w3.org/Style/CSS/Overview.en.html "CSS")
+- [JavaScript](https://www.javascript.com/ "JavaScript")
+- [Python](https://www.python.org/ "Python")
 
----
-
-### HTML
-
-This project uses semantic [HTML](https://html.com/ "HTML") to improve SEO and user friendliness.
-The HTML is rendered from the templates directory.
-
----
-
-### CSS
-
-The project uses responsive design to improve the user experience and availability on all devices.
-The [CSS](https://www.w3.org/Style/CSS/Overview.en.html "CSS") is separated using comments.
-It is rendered from the static directory.
-
----
-
-### JS
-
-I used [JavaScript](https://www.javascript.com/ "JavaScript") for some of the functions and interactivity on the application.
-Comments are provided to give an explanation of the functions.
-It is rendered from the static directory.
-
----
-
-### Python
-
-I used [Python](https://www.python.org/ "Python") for some of the functions and interactivity on the application.
-Comments are provided to give an explanation of the functions.
-
----
-
-### Flask
-
-I used [Flask](https://flask.palletsprojects.com/en/1.1.x/ "Flask") to create the web application.
-Here is a [cheatsheet](https://s3.us-east-2.amazonaws.com/prettyprinted/flask_cheatsheet.pdf/ "Flask Cheatcheet").
-
----
-
-### MongoDB
-
-I used [MongoDB](https://www.mongodb.com/ "MongoDB") for the database and [PyMongo](https://pypi.org/project/pymongo/ "PyMongo") to interact with it.
+### Libraries, frameworks, tools used
+- [Django](https://docs.djangoproject.com/en/3.1/) as python web framework used for rapid development, maintainable, clean design
 
 [Back to Top](#megapixel-groups-creative-hub)
 ***
