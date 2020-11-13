@@ -365,6 +365,7 @@ Are there any features that you would like me to implement to improve the applic
 - [Psycopg2](https://pypi.org/project/psycopg2/ "Psycopg2") as database adapter for the Python
 - [dj-database-url](https://pypi.org/project/dj-database-url/ "dj-database-url")
 - [Gunicorn](https://gunicorn.org/ "Gunicorn") or Green Unicorn, a WSGI server implementation used to run Python web application
+- [miniwebtool](https://miniwebtool.com/django-secret-key-generator/ "miniwebtool") for generating new SECRET_KEY
 
 ---
 

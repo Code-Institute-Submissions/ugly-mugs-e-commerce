@@ -27,12 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = development
+DEBUG = True
 
-if development:
-    ALLOWED_HOSTS = [os.environ.get('localhost')]
-else:
-    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+ALLOWED_HOSTS = ['https://ugly-mugs.herokuapp.com/', 'localhost']
 
 
 # Application definition
@@ -80,17 +77,18 @@ WSGI_APPLICATION = 'ugly_mugs.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-if development:
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-else:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
+    
 
 
 # Password validation
