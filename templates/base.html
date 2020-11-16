@@ -9,11 +9,28 @@
 
     <!-- Required meta tags -->
 
+    {% block meta %}
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% endblock %}
 
-	<title>Ugly Mugs</title>
+    {% block extra_meta %}
+    {% endblock %}
+
+    {% block corecss %}
+    {% endblock %}
+
+    {% block extra_css %}
+    {% endblock %}
+
+    {% block corejs %}
+    {% endblock %}
+
+    {% block extra_js %}
+    {% endblock %}
+
+	<title>Ugly Mugs {% block extra_title %}{% endblock %}</title>
 </head>
 
 <!-- Body -->
@@ -23,12 +40,25 @@
     <!-- Main -->
 
     <main>
+
+        <!-- Header -->
+        <header>
+        </header>
+
+        {% block page_header %}
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
     </main>
 
     <!-- Footer -->
 
     <footer>
     </footer>
+
+    {% block postloadjs %}
+    {% endblock %}
 </body>
 
 </html>
