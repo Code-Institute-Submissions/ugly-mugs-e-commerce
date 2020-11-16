@@ -368,6 +368,8 @@ Are there any features that you would like me to implement to improve the applic
 - [miniwebtool](https://miniwebtool.com/django-secret-key-generator/ "miniwebtool") for generating new SECRET_KEY
 - [django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html "django-allauth") for handling users, registrations and login / logout functionality
 - [materialize](https://materializecss.com "materalize") for access to some core css and js for a responsive and user friendly app
+- [jQuery](https://code.jquery.com/ "jQuery") for implementing functions provided by materialize
+
 ---
 
 ### Databases
