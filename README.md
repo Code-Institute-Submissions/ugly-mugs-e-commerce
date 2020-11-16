@@ -1,4 +1,4 @@
-# Megapixel Groups Creative Hub
+# Megapixel Groups Ugly Mugs
 
 Data Centric Development Milestone Project @ Code Institute
 
@@ -50,7 +50,7 @@ You can find the application [here](https://creative-hub.herokuapp.com/).
     - [Acknowledgements](#acknowledgements)
 - [Resources](#resources)
 
-[Back to Top](#megapixel-groups-creative-hub)
+[Back to Top](#megapixel-groups-ugly-mugs)
 ***
 
 ## UX
@@ -251,7 +251,7 @@ I used from SF Pro Text and SF Pro Display [Google Fonts]():
 - #111111 - font Colors
 - #222222 - background Colors
 
-[Back to Top](#megapixel-groups-creative-hub)
+[Back to Top](#megapixel-groups-ugly-mugs)
 ***
 
 ## Features
@@ -347,7 +347,7 @@ I might add a livechat for contacting the site owner and a chat function for com
 
 Are there any features that you would like me to implement to improve the application? Please get in touch and share your thoughts.
 
-[Back to Top](#megapixel-groups-creative-hub)
+[Back to Top](#megapixel-groups-ugly-mugs)
 ***
 
 ## Technologies Used
@@ -366,6 +366,7 @@ Are there any features that you would like me to implement to improve the applic
 - [dj-database-url](https://pypi.org/project/dj-database-url/ "dj-database-url")
 - [Gunicorn](https://gunicorn.org/ "Gunicorn") or Green Unicorn, a WSGI server implementation used to run Python web application
 - [miniwebtool](https://miniwebtool.com/django-secret-key-generator/ "miniwebtool") for generating new SECRET_KEY
+- [django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html "django-allauth") for handling users, registrations and login / logout functionality
 
 ---
 
@@ -373,7 +374,7 @@ Are there any features that you would like me to implement to improve the applic
 - [PostgreSQL](https://www.postgresql.org/ "PostgreSQL") database service provided directly by Heroku
 - [SQlite3](https://www.sqlite.org/index.html "SQlite3") provided by django
 
-[Back to Top](#megapixel-groups-creative-hub) 
+[Back to Top](#megapixel-groups-ugly-mugs) 
 ***
 
 ## Testing
@@ -478,26 +479,12 @@ It has a lot of potential to provide even more value for the user with future in
 The javascript and python works as intended.
 The minor flaws that exist don’t ruin the user experience but should be corrected in the future.
 
-[Back to Top](#megapixel-groups-creative-hub)
+[Back to Top](#megapixel-groups-ugly-mugs)
 ***
 
 ## Deployment
 
 This project is stored in a GitHub repository and hosted on Heroku.
-
----
-
-### How to deploy to Github
-
-1. Click [here](https://github.com/robinwesterback/creative-hub/ "Creative Hub Repository") to get to the projects repository.
-
-2. Click on 'Settings' to the far right in navigation menu below your repository name.
-
-3. Scroll down to 'GitHub Pages' and select 'master branch' as the source.
-
-4. Click save.
-
-5. The link to the site hosted on GitHub Pages should appear at the top of the section.
 
 ---
 
@@ -519,15 +506,18 @@ This project is stored in a GitHub repository and hosted on Heroku.
 
 7. When you press enter your local clone will be ready.
 
+8. Install the requirements from requirements.txt
+
 ---
 
-### How to clone this repository in order to run the code locally on your machine
+### How I deployed the project on Heroku
 
-1. Created a new application using the Heroku dashboard.
+1. Create a new application using the Heroku dashboard.
 
 2. Go to settings tab, click on 'reveal config vars' and add config vars such as IP (0.0.0.0), PORT (5000), MongoDB Name, MongoDB URI (URL with DB name and password).
+Add settings accordingly to settings.py.
 
-3. Install Heroku via the console using 'npm install -g Heroku'.
+3. Postgres on Heroku and install [gunicorn]( ""), [dj-database-url]( ""), and [psycopg2-binary]( "") 
 
 4. Log into Heroku via the console using 'heroku login' and follow the on screen instructions to log in.
 
@@ -535,7 +525,7 @@ This project is stored in a GitHub repository and hosted on Heroku.
 
 6. Create a Procfile via the console using 'echo web: python app.py > Procfile'.
 
-7. Connect GitHub to Heroku via the console using 'heroku git:remote a creative-hub'
+7. Connect GitHub to Heroku via the console using 'heroku git:remote a ugly-mugs'
 
 8. Commit all files in your project via the console using 'git add .' and 'git commit -m "Message"'.
 
@@ -557,7 +547,7 @@ This project is stored in a GitHub repository and hosted on Heroku.
 
 6. Run the application.
 
-[Back to Top](#megapixel-groups-creative-hub)
+[Back to Top](#megapixel-groups-ugly-mugs)
 ***
 
 ## Credits
@@ -591,7 +581,7 @@ The Icons used for this project was from [Materialize](https://materializecss.co
 
 Big thanks to my mentor who provided me with tips, support and some helpful resources.
 
-[Back to Top](#megapixel-groups-creative-hub)
+[Back to Top](#megapixel-groups-ugly-mugs)
 ***
 
 ## Resources
