@@ -367,7 +367,7 @@ Are there any features that you would like me to implement to improve the applic
 - [Gunicorn](https://gunicorn.org/ "Gunicorn") or Green Unicorn, a WSGI server implementation used to run Python web application
 - [miniwebtool](https://miniwebtool.com/django-secret-key-generator/ "miniwebtool") for generating new SECRET_KEY
 - [django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html "django-allauth") for handling users, registrations and login / logout functionality
-
+- [materialize](https://materializecss.com "materalize") for access to some core css and js for a responsive and user friendly app
 ---
 
 ### Databases
@@ -588,7 +588,4 @@ Big thanks to my mentor who provided me with tips, support and some helpful reso
 
 Below is a list of the resources used to create this project:
 
-- [Log in system](https://www.youtube.com/watch?v=vVx1737auSE&ab_channel=PrettyPrinted "Log in system")
 - [Materialize](https://materializecss.com/ "Materialize")
-- [EmailJS](https://emailjs.com/ "EmailJS")
-- [Flask Cheatcheet](https://s3.us-east-2.amazonaws.com/prettyprinted/flask_cheatsheet.pdf "Flask Cheatcheet")

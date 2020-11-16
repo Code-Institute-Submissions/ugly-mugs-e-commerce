@@ -7,28 +7,35 @@
 
 <head>
 
-    <!-- Required meta tags -->
+	<!-- Required meta tags -->
 
-    {% block meta %}
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	{% block meta %}
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% endblock %}
+	{% endblock %}
 
-    {% block extra_meta %}
-    {% endblock %}
+	{% block extra_meta %}
+	{% endblock %}
 
-    {% block corecss %}
-    {% endblock %}
+	{% block corecss %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    
+	<!-- Materialize - Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    {% block extra_css %}
-    {% endblock %}
+	<!-- Materialize - Icons -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	{% endblock %}
 
-    {% block corejs %}
-    {% endblock %}
+	{% block extra_css %}
+	{% endblock %}
 
-    {% block extra_js %}
-    {% endblock %}
+	{% block corejs %}
+	{% endblock %}
+
+	{% block extra_js %}
+	{% endblock %}
 
 	<title>Ugly Mugs {% block extra_title %}{% endblock %}</title>
 </head>
@@ -37,28 +44,72 @@
 
 <body>
 
-    <!-- Main -->
+	<!-- Main -->
 
-    <main>
+	<main>
 
-        <!-- Header -->
-        <header>
-        </header>
+		<!-- Header -->
+		<header>
+			<nav>
+				<div class="nav-wrapper">
+					<a href="{% url 'home' %}" class="brand-logo">UglyMugs.com</a>
+					<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li><a href="">ABOUT</a></li>
+						{% if request.user.is_authenticated %}
+						<li><a href="">MY PROFILE</a></li>
+						<li><a href="{% url 'account_logout' %}">LOGOUT</a></li>
+						{% else %}
+						<li><a href="{% url 'account_signup' %}">REGISTER</a></li>
+						<li><a href="{% url 'account_login' %}">LOGIN</a></li>
+						{% endif %}
+						<li><a href="">THE COLLECTION</a></li>
+						<li><a href="">CONTACT</a></li>
+					</ul>
+				</div>
+			</nav>
 
-        {% block page_header %}
-        {% endblock %}
+			<ul class="sidenav" id="mobile-demo">
+				<li><a href="">ABOUT</a></li>
+				{% if request.user.is_authenticated %}
+				<li><a href="">MY PROFILE</a></li>
+				<li><a href="">LOGOUT</a></li>
+				{% else %}
+				<li><a href="">REGISTER</a></li>
+				<li><a href="">LOGIN</a></li>
+				{% endif %}
+				<li><a href="">THE COLLECTION</a></li>
+				<li><a href="">CONTACT</a></li>
+			</ul>
+		</header>
 
-        {% block content %}
-        {% endblock %}
-    </main>
+		{% block page_header %}
+		{% endblock %}
 
-    <!-- Footer -->
+		{% block content %}
+		{% endblock %}
+	</main>
 
-    <footer>
-    </footer>
+	<!-- Footer -->
 
-    {% block postloadjs %}
-    {% endblock %}
+	<footer>
+	</footer>
+
+	{% block postloadjs %}
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.js"
+		integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+
+	<!-- Materialize - Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+	<!-- Materialize - jQuery -->
+	<script>
+		$(document).ready(function(){
+            $('.sidenav').sidenav();
+        });
+	</script>
+	{% endblock %}
 </body>
 
 </html>
