@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Mugs
+from .models import Mug
 
 class MugsAdmin(admin.ModelAdmin):
     list_display = (
@@ -12,4 +12,4 @@ class MugsAdmin(admin.ModelAdmin):
     ordering = ('sku',)
 
 
-admin.site.register(Mugs, MugsAdmin)
+admin.site.register(Mug, MugsAdmin)

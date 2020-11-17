@@ -63,7 +63,7 @@
 						<li><a href="{% url 'account_signup' %}">REGISTER</a></li>
 						<li><a href="{% url 'account_login' %}">LOGIN</a></li>
 						{% endif %}
-						<li><a href="">THE COLLECTION</a></li>
+						<li><a href="{% url 'mugs' %}">THE COLLECTION</a></li>
 						<li><a href="">CONTACT</a></li>
 					</ul>
 				</div>
@@ -73,12 +73,12 @@
 				<li><a href="">ABOUT</a></li>
 				{% if request.user.is_authenticated %}
 				<li><a href="">MY PROFILE</a></li>
-				<li><a href="">LOGOUT</a></li>
+				<li><a href="{% url 'account_logout' %}">LOGOUT</a></li>
 				{% else %}
-				<li><a href="">REGISTER</a></li>
-				<li><a href="">LOGIN</a></li>
+				<li><a href="{% url 'account_signup' %}">REGISTER</a></li>
+				<li><a href="{% url 'account_login' %}">LOGIN</a></li>
 				{% endif %}
-				<li><a href="">THE COLLECTION</a></li>
+				<li><a href="{% url 'mugs' %}">THE COLLECTION</a></li>
 				<li><a href="">CONTACT</a></li>
 			</ul>
 		</header>

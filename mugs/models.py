@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Mugs(models.Model):
+class Mug(models.Model):
 
     class Meta:
         verbose_name_plural = 'Mugs'

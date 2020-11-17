@@ -12,12 +12,16 @@
 		<div class="card">
             {% if mug.image %}
 			<div class="card-image">
-				<img src="{{ mug.image.url }}" alt="{{ mug.name }}">
+                <a href="{% url 'mug_detail' mug.id %}">
+                    <img src="{{ mug.image.url }}" alt="{{ mug.name }}">
+                </a>
 				<span class="card-title">{{ mug.name }}</span>
 			</div>
             {% else %}
             <div class="card-image">
-				<img src="{{ MEDIA_URL }}my-ugly-mug.jpg" alt="{{ mug.name }}">
+                <a href="{% url 'mug_detail' mug.id %}">
+    				<img src="{{ MEDIA_URL }}my-ugly-mug.jpg" alt="{{ mug.name }}">
+                </a>
 				<span class="card-title">{{ mug.name }}</span>
 			</div>
             {% endif %}

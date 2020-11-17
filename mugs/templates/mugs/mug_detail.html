@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>It works!</h1>
+
+<div class="row">
+	{% for mug in mugs %}
+	<div class="col">
+		{% if mug.image %}
+		<a href="{{ mug.image.url }}" target="_blank">
+			<img src="{{ mug.image.url }}" alt="{{ mug.name }}" target="_blank">
+        </a>
+		{% else %}
+		<a href="{{ mug.image.url }}" target="_blank">
+			<img src="{{ MEDIA_URL }}my-ugly-mug.jpg" alt="{{ mug.name }}">
+        </a>
+		{% endif %}
+		<p>{{ mug.name }}</p>
+        <p>{{ mug.price }}</p>
+        <p>{{ mug.description }}</p>
+		<div class="card-action">
+			<a href="#">This is a link</a>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+
+{% endblock %}
