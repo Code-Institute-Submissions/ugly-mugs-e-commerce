@@ -1,27 +1,55 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 <h1>It works!</h1>
 
 <div class="row">
-	<div class="col s12">
-		{% if mug.image %}
-		<a href="{{ mug.image.url }}" target="_blank">
-			<img src="{{ mug.image.url }}" alt="{{ mug.name }}" target="_blank">
-        </a>
-		{% else %}
-		<a href="{{ mug.image.url }}" target="_blank">
-			<img src="{{ MEDIA_URL }}my-ugly-mug.jpg" alt="{{ mug.name }}">
-        </a>
-		{% endif %}
-		<p>{{ mug.name }}</p>
-        <p>{{ mug.price }}</p>
-        <p>{{ mug.description }}</p>
-		<div class="card-action">
-			<a href="#">This is a link</a>
-		</div>
-	</div>
+  <div class="col s12">
+    {% if mug.image %}
+    <a href="{{ mug.image.url }}" target="_blank">
+      <img src="{{ mug.image.url }}" alt="{{ mug.name }}" target="_blank" />
+    </a>
+    {% else %}
+    <a href="{{ mug.image.url }}" target="_blank">
+      <img src="{{ MEDIA_URL }}my-ugly-mug.jpg" alt="{{ mug.name }}" />
+    </a>
+    {% endif %}
+    <p>{{ mug.name }}</p>
+    <p>{{ mug.price }}</p>
+    <p>{{ mug.description }}</p>
+  </div>
+
+  <!-- Materialize Form - Add to Cart -->
+
+  <form class="col s12" action="{% url 'add_to_cart' mug.id %} " method="POST">
+    {% csrf_token %}
+    <div class="row">
+      <div class="input-field col s6">
+        <input
+          id="first_name"
+          type="number"
+          name="quantity"
+          value="1"
+          min="1"
+          max="99"
+          data-item_id="{{ mug.id }}"
+          id="id_qty_{{ mug.id }}"
+          class="validate"
+        />
+        <label for="quantity">Quantity</label>
+      </div>
+      <div class="input-field col s6">
+        <a href="{% url 'mugs' %}" class="waves-effect waves-light btn">Keep Shopping</a>
+        <button
+          class="btn waves-effect waves-light"
+          type="submit"
+          name="action"
+        >
+          Add to Cart
+          <i class="material-icons right">add_shopping_cart</i>
+        </button>
+      </div>
+    </div>
+    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+  </form>
 </div>
 
 {% endblock %}

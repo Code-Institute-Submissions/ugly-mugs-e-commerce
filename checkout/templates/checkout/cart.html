@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+  <h1>It works!</h1>
+  <div class="col s12">
+    {% if cart_items %}
+        <table>
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>Item Name</th>
+              <th>Item Price</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Alvin</td>
+            <td>Eclair</td>
+            <td>$0.87</td>
+          </tr>
+          <tr>
+            <td>Alan</td>
+            <td>Jellybean</td>
+            <td>$3.76</td>
+          </tr>
+          <tr>
+            <td>Jonathan</td>
+            <td>Lollipop</td>
+            <td>$7.00</td>
+          </tr>
+        </tbody>
+      </table>
+    {% else %}
+      <p>Your bag is empty.</p>
+      <a href="{% url 'mugs' %}" class="waves-effect waves-light btn">Keep Shopping</a>
+    {% endif %}
+  </div>
+</div>
+
+
+{% endblock %}
