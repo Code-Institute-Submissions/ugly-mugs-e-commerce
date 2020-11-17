@@ -370,6 +370,7 @@ Are there any features that you would like me to implement to improve the applic
 - [materialize](https://materializecss.com "materalize") for access to some core css and js for a responsive and user friendly app
 - [jQuery](https://code.jquery.com/ "jQuery") for implementing functions provided by materialize
 - [Pillow](https://pillow.readthedocs.io/en/stable/ "Pillow") for saving image file formats
+- [JSON formatter](https://jsonformatter.org/ "JSON formatter") for formatting JSON
 
 ---
 

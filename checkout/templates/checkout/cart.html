@@ -28,7 +28,27 @@
             <p>${{ item.mug.price }}</p>
           </td>
           <td>
-            <p>{{ item.quantity }}</p>
+            <form class="update-form" method="POST" action="">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="input-field col">
+                        <input
+                        id="first_name"
+                        type="number"
+                        name="quantity"
+                        value="{{ item.quantity }}"
+                        min="1"
+                        max="99"
+                        data-item_id="{{ item.item_id }}"
+                        id="id_qty_{{ item.item_id }}"
+                        class="validate"
+                        />
+                        <label for="quantity">Quantity</label>
+                    </div>
+                </div>
+                <a class="update-link"><small>Update</small></a>
+                <a class="remove-item right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+            </form>
           </td>
           <td>
             <p>${{ item.mug.price }}</p>
@@ -60,4 +80,30 @@
   </div>
 </div>
 
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+
+<script type="text/javascript">
+    // Update quantity on click
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('size');
+        var url = `/cart/remove/${itemId}`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
 {% endblock %}
