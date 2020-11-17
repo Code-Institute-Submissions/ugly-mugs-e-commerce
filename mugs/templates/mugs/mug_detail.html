@@ -6,7 +6,7 @@
 
 <div class="row">
 	{% for mug in mugs %}
-	<div class="col">
+	<div class="col s12">
 		{% if mug.image %}
 		<a href="{{ mug.image.url }}" target="_blank">
 			<img src="{{ mug.image.url }}" alt="{{ mug.name }}" target="_blank">
