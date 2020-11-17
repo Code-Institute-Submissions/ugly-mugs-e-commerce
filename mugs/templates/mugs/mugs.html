@@ -4,6 +4,33 @@
 {% block content %}
 <h1>It works!</h1>
 
-{{ mugs }}
+<!-- Materialize Card - Mug Container -->
+
+<div class="row">
+    {% for mug in mugs %}
+	<div class="col s12 m7">
+		<div class="card">
+            {% if mug.image %}
+			<div class="card-image">
+				<img src="{{ mug.image.url }}" alt="{{ mug.name }}">
+				<span class="card-title">{{ mug.name }}</span>
+			</div>
+            {% else %}
+            <div class="card-image">
+				<img src="{{ MEDIA_URL }}my-ugly-mug.jpg" alt="{{ mug.name }}">
+				<span class="card-title">{{ mug.name }}</span>
+			</div>
+            {% endif %}
+			<div class="card-content">
+				<p>I am a very simple card. I am good at containing small bits of information.
+					I am convenient because I require little markup to use effectively.</p>
+			</div>
+			<div class="card-action">
+				<a href="#">This is a link</a>
+			</div>
+		</div>
+	</div>
+    {% endfor %}
+</div>
 
 {% endblock %}
