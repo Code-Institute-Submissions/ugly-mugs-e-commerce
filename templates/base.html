@@ -54,6 +54,11 @@
 				<div class="nav-wrapper">
 					<a href="{% url 'home' %}" class="brand-logo">UglyMugs.com</a>
                     <a href="{% url 'view_cart' %}" class="right"><i class="material-icons">shopping_cart</i></a>
+                    <p class="right">
+                        {% if mug_count %}
+                            {{ mug_count }}
+                        {% endif %}
+                    </p>
 					<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li><a href="">ABOUT</a></li>

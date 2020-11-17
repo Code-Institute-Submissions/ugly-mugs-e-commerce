@@ -1,5 +1,7 @@
 from decimal import Decimal
 from django.conf import settings
+from django.shortcuts import get_object_or_404
+from mugs.models import Mug
 
 
 def cart_contents(request):
@@ -7,6 +9,17 @@ def cart_contents(request):
     cart_items = []
     total = 0
     mug_count = 0
+    cart = request.session.get('cart', {})
+
+    for item_id, quantity in cart.items():
+        mug = get_object_or_404(Mug, pk=item_id)
+        total += quantity * mug.price
+        mug_count += quantity
+        cart_items.append({
+            'item_id': item_id,
+            'quantity': quantity,
+            'mug': mug,
+        })
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)

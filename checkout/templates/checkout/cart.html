@@ -1,44 +1,63 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 <div class="row">
   <h1>It works!</h1>
   <div class="col s12">
     {% if cart_items %}
-        <table>
-        <thead>
-          <tr>
-              <th>Name</th>
-              <th>Item Name</th>
-              <th>Item Price</th>
-          </tr>
-        </thead>
+    <table>
+      <thead>
+        <tr>
+          <th>Mug Info</th>
+          <th></th>
+          <th>Price</th>
+          <th>Qty</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
 
-        <tbody>
-          <tr>
-            <td>Alvin</td>
-            <td>Eclair</td>
-            <td>$0.87</td>
-          </tr>
-          <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td>$3.76</td>
-          </tr>
-          <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
-          </tr>
-        </tbody>
-      </table>
+      <tbody>
+        {% for item in cart_items %}
+        <tr>
+          <td>
+            <img src="{{ item.mug.image.url }}">
+          </td>
+          <td>
+            <p><strong>{{ item.mug.name }}</strong></p>
+            <p>SKU: {{ item.mug.sku|upper }}</p>
+          </td>
+          <td>
+            <p>${{ item.mug.price }}</p>
+          </td>
+          <td>
+            <p>{{ item.quantity }}</p>
+          </td>
+          <td>
+            <p>${{ item.mug.price }}</p>
+          </td>
+        </tr>
+        {% endfor %}
+        <tr>
+          <td>
+            <p>Cart Total: ${{ total|floatformat:2 }}</p>
+            <p>Delivery: ${{ delivery|floatformat:2 }}</p>
+            <p>Grand Total: ${{ grand_total|floatformat:2 }}</p>
+            {% if free_delivery_delta > 0 %}
+                <p>You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!</p>
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="{% url 'mugs' %}" class="waves-effect waves-light btn">Keep Shopping</a>
+                <a href="{% url 'mugs' %}" class="waves-effect waves-light btn"><i class="material-icons">lock</i>Secure Checkout</a>
+            </td>
+        </tr>
+      </tbody>
+    </table>
     {% else %}
-      <p>Your bag is empty.</p>
-      <a href="{% url 'mugs' %}" class="waves-effect waves-light btn">Keep Shopping</a>
+    <p>Your bag is empty.</p>
+    <a href="{% url 'mugs' %}" class="waves-effect waves-light btn">Keep Shopping</a>
     {% endif %}
   </div>
 </div>
-
 
 {% endblock %}
