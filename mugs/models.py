@@ -5,7 +5,7 @@ class Mug(models.Model):
 
     class Meta:
         verbose_name_plural = 'Mugs'
-    
+
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField(max_length=254)
