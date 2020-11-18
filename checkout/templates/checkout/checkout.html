@@ -39,7 +39,7 @@
             </div>
         </div>
 		<p>Please fill out the form below to complete your order</p>
-		<form class="col s12" action="{% url 'checkout' %}" method="POST">
+		<form class="col s12" id="payment-form" action="{% url 'checkout' %}" method="POST">
 			{% csrf_token %}
             <fieldset>
                 <div class="row">
@@ -52,6 +52,8 @@
                         <label for="last_name">Last Name</label>
                     </div>
                 </div>
+            </fieldset>
+            <fieldset>
                 {% if user.is_authenticated %}
                 <label for="id-save-info">Save this delivery information to my profile</label>
                 <input type="checkbox" id="id-save-info" name="save-info" checked>
@@ -60,8 +62,14 @@
                 <a href="{% url 'account_signup' %}">Create an account</a> or
                 <a href="{% url 'account_login' %}">login</a> to save this information
                 </label>
+            </fieldset>
+            <fieldset>
                 {% endif %}
+                <!-- A Stripe card element will go here -->
                 <div id="card-element"></div>
+
+                <!-- Used to display form errors -->
+                <div id="card-errors"></div>
             </fieldset>
             <a class="waves-effect waves-light btn" href="{% url 'view_cart' %}">Adjust Cart</a>
             <a class="waves-effect waves-light btn">Complete Order</a>
