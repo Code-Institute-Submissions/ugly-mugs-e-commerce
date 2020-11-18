@@ -1,0 +1,70 @@
+{% extends "base.html" %} {% load static %} {% load cart_tools %} {% block content %}
+<div class="row">
+	<h1>Checkout!</h1>
+	<div class="col s12">
+		<p>Order Summary ({{ mug_count }})</p>
+		<div class="row">
+			<p>Item</p>
+			<p>Subtotal</p>
+		</div>
+		{% for item in cart_items %}
+		<div class="row">
+			<a href="{% url 'mug_detail' item.mug.id %}">
+				{% if item.mug.image %}
+				<img src="{{ item.mug.image.url }}" alt="{{ mug.name }}">
+            {% else %}
+				<img src="{{ MEDIA_URL }}my-ugly-mug.jpg" alt="{{ mug.name }}">
+            {% endif %}
+            </a>
+		</div>
+        <div class="col s7">
+            <p>{{ item.mug.name }}</p>
+            <p>Qty: {{ item.quantity }}</p>
+        </div>
+        <div class="col s3">
+            <p>{{ item.mug.price | calc_subtotal:item.quantity }}</p>
+        </div>
+        {% endfor %}
+        <hr>
+        <div class="row">
+            <div class="col s7">
+                <p>Order Total:</p>
+                <p>Delivery:</p>
+                <p>Grand Total:</p>
+            </div>
+            <div class="col s3">
+                <p>{{ total | floatformat:2 }}</p>
+                <p>{{ delivery | floatformat:2 }}</p>
+                <p>{{ grand_total | floatformat:2 }}</p>
+            </div>
+        </div>
+		<p>Please fill out the form below to complete your order</p>
+		<form class="col s12" action="{% url 'checkout' %}" method="POST">
+			{% csrf_token %}
+            <fieldset>
+                <div class="row">
+                    <div class="input-field col s6">
+                        {{ order_form.full_name | as_crispy_field }}
+                    </div>
+                    <div class="input-field col s6">
+                        {{ order_form.email | as_crispy_field }}
+                    </div>
+                </div>
+                {% if user.is_authenticated %}
+                <label for="id-save-info">Save this delivery information to my profile</label>
+                <input type="checkbox" id="id-save-info" name="save-info" checked>
+                {% else %}
+                <label for ="id_save-info">
+                <a href="{% url 'account_signup' %}">Create an account</a> or
+                <a href="{% url 'account_login' %}">login</a> to save this information
+                </label>
+                {% endif %}
+            </fieldset>
+            <a class="waves-effect waves-light btn" href="{% url 'view_cart' %}">Adjust Cart</a>
+            <a class="waves-effect waves-light btn">Complete Order</a>
+            <p>Your card will be charged ${{ grand_total|floatformat:2}}</p>
+		</form>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,4 +1,7 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.contrib import messages
+
+from .forms import OrderForm
 
 
 def view_cart(request):
@@ -52,3 +55,18 @@ def add_to_cart(request, item_id):
 #
  #   except Exception as e:
 #        return HttpResponse(status=500)
+
+
+def checkout(request):
+    cart = request.session.get('cart', {})
+    if not cart:
+        messages.error(request, "There's nothing in your bag at the moment")
+        return redirect(reverse('mugs'))
+
+    order_form = OrderForm()
+    template = 'checkout/checkout.html'
+    context = {
+        'order_form': order_form,
+    }
+
+    return render(request, template, context)
