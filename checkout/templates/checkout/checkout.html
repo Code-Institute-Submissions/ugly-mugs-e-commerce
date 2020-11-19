@@ -17,63 +17,93 @@
             {% endif %}
             </a>
 		</div>
-        <div class="col s7">
-            <p>{{ item.mug.name }}</p>
-            <p>Qty: {{ item.quantity }}</p>
-        </div>
-        <div class="col s3">
-            <p>{{ item.mug.price | calc_subtotal:item.quantity }}</p>
-        </div>
-        {% endfor %}
-        <hr>
-        <div class="row">
-            <div class="col s7">
-                <p>Order Total:</p>
-                <p>Delivery:</p>
-                <p>Grand Total:</p>
-            </div>
-            <div class="col s3">
-                <p>{{ total | floatformat:2 }}</p>
-                <p>{{ delivery | floatformat:2 }}</p>
-                <p>{{ grand_total | floatformat:2 }}</p>
-            </div>
-        </div>
+		<div class="col s7">
+			<p>{{ item.mug.name }}</p>
+			<p>Qty: {{ item.quantity }}</p>
+		</div>
+		<div class="col s3">
+			<p>{{ item.mug.price | calc_subtotal:item.quantity }}</p>
+		</div>
+		{% endfor %}
+		<hr>
+		<div class="row">
+			<div class="col s7">
+				<p>Order Total:</p>
+				<p>Delivery:</p>
+				<p>Grand Total:</p>
+			</div>
+			<div class="col s3">
+				<p>{{ total | floatformat:2 }}</p>
+				<p>{{ delivery | floatformat:2 }}</p>
+				<p>{{ grand_total | floatformat:2 }}</p>
+			</div>
+		</div>
 		<p>Please fill out the form below to complete your order</p>
 		<form class="col s12" id="payment-form" action="{% url 'checkout' %}" method="POST">
 			{% csrf_token %}
-            <fieldset>
-                <div class="row">
+			<fieldset>
+				<div class="row">
+					<div class="input-field col s6">
+						<input placeholder="Full Name" id="id_full_name" name="full_name" type="text" class="validate" required>
+						<label for="full_name">Full Name</label>
+					</div>
+					<div class="input-field col s6">
+						<input id="id_email" type="email" name="email" class="validate" required>
+						<label for="email">E-mail</label>
+					</div>
+					<div class="input-field col s6">
+						<input placeholder="Phone Number" id="id_phone_number" name="phone_number" type="tel" class="validate" required>
+						<label for="phone_number">Phone Number</label>
+					</div>
                     <div class="input-field col s6">
-                        <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                        <label for="first_name">First Name</label>
-                    </div>
+						<input placeholder="Street Address 1" id="id_street_address1" name="street_address1" type="text" class="validate" required>
+						<label for="street_address1">Street Address 1</label>
+					</div>
+					<div class="input-field col s6">
+						<input placeholder="Street Address 2" id="id_street_address2" name="street_address2" type="text" class="validate">
+						<label for="street_address2">Street Address 2</label>
+					</div>
                     <div class="input-field col s6">
-                        <input id="last_name" type="text" class="validate">
-                        <label for="last_name">Last Name</label>
-                    </div>
-                </div>
-            </fieldset>
-            <fieldset>
-                {% if user.is_authenticated %}
-                <label for="id-save-info">Save this delivery information to my profile</label>
-                <input type="checkbox" id="id-save-info" name="save-info" checked>
+						<input placeholder="Town or City" id="id_town_or_city" name="town_or_city" type="text" class="validate" required>
+						<label for="town_or_city">Town or City</label>
+					</div>
+                    <div class="input-field col s6">
+						<input placeholder="County, State or Locality" id="id_county" name="county" type="text" class="validate">
+						<label for="county">County, State or Locality</label>
+					</div>
+					<div class="input-field col s6">
+						<input placeholder="Postal Code" id="id_postcode" name="postcode" type="text" class="validate" required>
+						<label for="postcode">Postal Code</label>
+					</div>
+					<div class="input-field col s6">
+						<input placeholder="Placeholder" id="id_country" name="country" type="text" class="validate" required>
+						<label for="country">Country</label>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset>
+				{% if user.is_authenticated %}
+				<label for="id-save-info">Save this delivery information to my profile</label>
+				<input type="checkbox" id="id-save-info" name="save-info" checked>
                 {% else %}
-                <label for ="id_save-info">
+				<label for ="id_save-info">
                 <a href="{% url 'account_signup' %}">Create an account</a> or
                 <a href="{% url 'account_login' %}">login</a> to save this information
                 </label>
-            </fieldset>
-            <fieldset>
-                {% endif %}
-                <!-- A Stripe card element will go here -->
-                <div id="card-element"></div>
+			</fieldset>
+			<fieldset>
+				{% endif %}
+				<!-- A Stripe card element will go here -->
+				<div id="card-element"></div>
 
-                <!-- Used to display form errors -->
-                <div id="card-errors"></div>
-            </fieldset>
-            <a class="waves-effect waves-light btn" href="{% url 'view_cart' %}">Adjust Cart</a>
-            <a class="waves-effect waves-light btn">Complete Order</a>
-            <p>Your card will be charged ${{ grand_total|floatformat:2}}</p>
+				<!-- Used to display form errors -->
+				<div id="card-errors"></div>
+			</fieldset>
+			<a class="waves-effect waves-light btn" href="{% url 'view_cart' %}">Adjust Cart</a>
+			<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+			<p>Your card will be charged ${{ grand_total|floatformat:2}}</p>
 		</form>
 	</div>
 </div>
@@ -81,8 +111,8 @@
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-    {{ client_secret|json_script:"id_client_secret" }}
-    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}

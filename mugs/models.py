@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 
 class Mug(models.Model):
@@ -7,6 +8,7 @@ class Mug(models.Model):
         verbose_name_plural = 'Mugs'
 
     sku = models.CharField(max_length=254, null=True, blank=True)
+    date = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=254)
     description = models.TextField(max_length=254)
     on_sale = models.BooleanField(default=False, null=True, blank=True)
