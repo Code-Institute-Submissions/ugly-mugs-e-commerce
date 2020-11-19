@@ -11,6 +11,46 @@
         </div>
     </div>
     <div class="row">
+        <div class="col">
+            <p>Order Info:</p>
+            <p>Order Number:</p>
+            <p>{{ order.order_number }}</p>
+            <p>Order Date:</p>
+            <p>{{ order.date }}</p>
+            <p>Order Details:</p>
+            {% for item in order.lineitems.all %}
+            <p>{{ item.mug.name }}</p>
+            <p>{{ item.quantity }} @ ${{ item.mug.price }} each</p>
+            {% endfor %}
+            <p>Delivering To:</p>
+            <p>Order Full Name:</p>
+            <p>{{ order.full_name }}</p>
+            <p>Order Street Address 1:</p>
+            <p>{{ order.street_address1 }}</p>
+            {% if order.street_address2 %}
+            <p>Order Street Address 2:</p>
+            <p>{{ order.street_address2 }}</p>
+            {% endif %}
+            {% if order.county %}
+            <p>Order County:</p>
+            <p>{{ order.county }}</p>
+            {% endif %}
+            <p>Order Town Or City:</p>
+            <p>{{ order.town_or_city }}</p>
+            <p>Order Postal Code:</p>
+            <p>{{ order.postcode }}</p>
+            <p>Order Country:</p>
+            <p>{{ order.Country }}</p>
+            <p>Order Phone Number:</p>
+            <p>{{ order.phone_number }}</p>
+            <p>Billing Info:</p>
+            <p>Order Total:</p>
+            <p>{{ order.order_total }}</p>
+            <p>Delivery:</p>
+            <p>{{ order.delivery_cost }}</p>
+            <p>Grand Total:</p>
+            <p>{{ order.grand_total }}</p>
+        </div>
     </div>
     <div class="row">
 		<a href="{% url 'mugs' %}">

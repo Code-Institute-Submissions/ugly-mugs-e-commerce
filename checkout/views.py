@@ -52,14 +52,14 @@ def add_to_cart(request, item_id):
 #def remove_from_cart(request, item_id):
 #    """ Adjust the quantity of the specified mug to the specified amount """
 #
- #   try:
+#   try:
 #        cart = request.session.get('cart', {})
 #        cart.pop(item_id)
 #
 #        request.session['cart'] = cart
 #        return HttpResponse(status=200)
 #
- #   except Exception as e:
+#   except Exception as e:
 #        return HttpResponse(status=500)
 
 

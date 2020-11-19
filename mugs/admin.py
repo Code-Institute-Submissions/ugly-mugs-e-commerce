@@ -4,6 +4,7 @@ from .models import Mug
 class MugsAdmin(admin.ModelAdmin):
     list_display = (
         'sku',
+        'date',
         'name',
         'price',
         'image',
