@@ -42,6 +42,7 @@
 		<form class="col s12" id="payment-form" action="{% url 'checkout' %}" method="POST">
 			{% csrf_token %}
 			<fieldset>
+                <legend>Details</legend>
 				<div class="row">
 					<div class="input-field col s6">
 						<input placeholder="Full Name" id="id_full_name" name="full_name" type="text" class="validate" required>
@@ -51,6 +52,11 @@
 						<input id="id_email" type="email" name="email" class="validate" required>
 						<label for="email">E-mail</label>
 					</div>
+				</div>
+			</fieldset>
+            <fieldset>
+                <legend>Delivery</legend>
+                <div class="row">
 					<div class="input-field col s6">
 						<input placeholder="Phone Number" id="id_phone_number" name="phone_number" type="tel" class="validate" required>
 						<label for="phone_number">Phone Number</label>
@@ -80,8 +86,6 @@
 						<label for="country">Country</label>
 					</div>
 				</div>
-			</fieldset>
-			<fieldset>
 				{% if user.is_authenticated %}
 				<label for="id-save-info">Save this delivery information to my profile</label>
 				<input type="checkbox" id="id-save-info" name="save-info" checked>
@@ -93,19 +97,28 @@
 			</fieldset>
 			<fieldset>
 				{% endif %}
+                <fieldset>Payment</fieldset>
 				<!-- A Stripe card element will go here -->
 				<div id="card-element"></div>
 
 				<!-- Used to display form errors -->
 				<div id="card-errors"></div>
+
+                <!-- Pass the client secret to the view so we can get the payment intent id -->
+                <input type="hidden" value="{{ client_secret }}" name="client_secret">
 			</fieldset>
 			<a class="waves-effect waves-light btn" href="{% url 'view_cart' %}">Adjust Cart</a>
-			<button class="btn waves-effect waves-light" id="submit-button" type="submit" name="action">Submit
+			<button class="btn waves-effect waves-light" id="submit-button" type="submit" name="action">Complete Order
                 <i class="material-icons right">send</i>
             </button>
 			<p>Your card will be charged ${{ grand_total|floatformat:2}}</p>
 		</form>
 	</div>
+</div>
+<div id="loading-overlay">
+    <h1 class="loading-spinner">
+        <i class="material-icons">autorenew</i>
+    </h1>
 </div>
 {% endblock %}
 
