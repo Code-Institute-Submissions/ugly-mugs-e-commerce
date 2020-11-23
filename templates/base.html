@@ -65,7 +65,7 @@
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li><a href="">ABOUT</a></li>
 						{% if request.user.is_authenticated %}
-						<li><a href="">MY PROFILE</a></li>
+						<li><a href="{% url 'profile' %}">MY PROFILE</a></li>
 						<li><a href="{% url 'account_logout' %}">LOGOUT</a></li>
 						{% else %}
 						<li><a href="{% url 'account_signup' %}">REGISTER</a></li>
@@ -80,7 +80,7 @@
 			<ul class="sidenav" id="mobile-demo">
 				<li><a href="">ABOUT</a></li>
 				{% if request.user.is_authenticated %}
-				<li><a href="">MY PROFILE</a></li>
+				<li><a href="{% url 'profile' %}">MY PROFILE</a></li>
 				<li><a href="{% url 'account_logout' %}">LOGOUT</a></li>
 				{% else %}
 				<li><a href="{% url 'account_signup' %}">REGISTER</a></li>
