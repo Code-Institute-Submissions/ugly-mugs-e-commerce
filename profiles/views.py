@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 
 from .models import UserProfile
-from .form import UserProfileForm
+from .forms import UserProfileForm
 
 
 def profile(request):
@@ -9,7 +9,7 @@ def profile(request):
     profile = get_object_or_404(UserProfile, user=request.user)
 
     form = UserProfileForm(instance=profile)
-    order = profile.orders.all()
+    orders = profile.orders.all()
 
     template = 'profiles/profile.html'
     context = {
