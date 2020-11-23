@@ -44,47 +44,20 @@
 			<fieldset>
                 <legend>Details</legend>
 				<div class="row">
-					<div class="input-field col s6">
-						<input placeholder="Full Name" id="id_full_name" name="full_name" type="text" class="validate" required>
-						<label for="full_name">Full Name</label>
-					</div>
-					<div class="input-field col s6">
-						<input id="id_email" type="email" name="email" class="validate" required>
-						<label for="email">E-mail</label>
-					</div>
+					{{ order_form.full_name | as_crispy_field }}
+                    {{ order_form.email | as_crispy_field }}
 				</div>
 			</fieldset>
             <fieldset>
                 <legend>Delivery</legend>
                 <div class="row">
-					<div class="input-field col s6">
-						<input placeholder="Phone Number" id="id_phone_number" name="phone_number" type="tel" class="validate" required>
-						<label for="phone_number">Phone Number</label>
-					</div>
-                    <div class="input-field col s6">
-						<input placeholder="Street Address 1" id="id_street_address1" name="street_address1" type="text" class="validate" required>
-						<label for="street_address1">Street Address 1</label>
-					</div>
-					<div class="input-field col s6">
-						<input placeholder="Street Address 2" id="id_street_address2" name="street_address2" type="text" class="validate">
-						<label for="street_address2">Street Address 2</label>
-					</div>
-                    <div class="input-field col s6">
-						<input placeholder="Town or City" id="id_town_or_city" name="town_or_city" type="text" class="validate" required>
-						<label for="town_or_city">Town or City</label>
-					</div>
-                    <div class="input-field col s6">
-						<input placeholder="County, State or Locality" id="id_county" name="county" type="text" class="validate">
-						<label for="county">County, State or Locality</label>
-					</div>
-					<div class="input-field col s6">
-						<input placeholder="Postal Code" id="id_postcode" name="postcode" type="text" class="validate" required>
-						<label for="postcode">Postal Code</label>
-					</div>
-					<div class="input-field col s6">
-						<input placeholder="Placeholder" id="id_country" name="country" type="text" class="validate" required>
-						<label for="country">Country</label>
-					</div>
+					{{ order_form.phone_number | as_crispy_field }}
+                    {{ order_form.street_address1 | as_crispy_field }}
+                    {{ order_form.street_address2 | as_crispy_field }}
+                    {{ order_form.town_or_city | as_crispy_field }}
+                    {{ order_form.county | as_crispy_field }}
+                    {{ order_form.postcode | as_crispy_field }}
+                    {{ order_form.country | as_crispy_field }}
 				</div>
 				{% if user.is_authenticated %}
 				<label for="id-save-info">Save this delivery information to my profile</label>
