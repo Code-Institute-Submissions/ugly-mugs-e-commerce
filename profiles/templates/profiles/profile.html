@@ -9,5 +9,20 @@
         <hr>
     </div>
 </div>
-{{ profile }}
+<div class="row">
+    <div>
+        <p>Default Delivery Information</p>
+        <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button class="btn waves-effect waves-light" id="submit-button" type="submit" name="action">Update Information
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+    </div>
+    <div>
+        <p>Order History</p>
+        {{ orders }}
+    </div>
+</div>
 {% endblock %}
