@@ -67,10 +67,10 @@
                 <a href="{% url 'account_signup' %}">Create an account</a> or
                 <a href="{% url 'account_login' %}">login</a> to save this information
                 </label>
+                {% endif %}
 			</fieldset>
 			<fieldset>
-				{% endif %}
-                <fieldset>Payment</fieldset>
+                <legend>Payment</legend>
 				<!-- A Stripe card element will go here -->
 				<div id="card-element"></div>
 

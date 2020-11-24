@@ -53,8 +53,14 @@
         </div>
     </div>
     <div class="row">
-		<a href="{% url 'mugs' %}">
-			Now check out our collection!
-		</a>
+        {% if from_profile %}
+            <a href="{% url 'profile' %}">
+                Back to Profile
+            </a>
+        {% else %}
+            <a href="{% url 'mugs' %}">
+                Now check out our collection!
+            </a>
+        {% endif %}
 	</div>
 {% endblock %}
