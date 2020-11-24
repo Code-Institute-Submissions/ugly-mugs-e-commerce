@@ -372,7 +372,9 @@ Are there any features that you would like me to implement to improve the applic
 - [Pillow](https://pillow.readthedocs.io/en/stable/ "Pillow") for saving image file formats
 - [JSON formatter](https://jsonformatter.org/ "JSON formatter") for formatting JSON
 - [Django Countries](https://pypi.org/project/django-countries/#installation "Django Countries") for CountryField
-- [Django crispy forms](https://django-crispy-forms.readthedocs.io/en/latest/ "Django crispy forms") for forms.
+- [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/ "django-crispy-forms") for forms.
+- [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html "Boto3") for AWS SDK.
+- [django-storages](https://django-storages.readthedocs.io/en/latest/ "django-storages") is a collection of custom storage backends for Django.
 
 ---
 
