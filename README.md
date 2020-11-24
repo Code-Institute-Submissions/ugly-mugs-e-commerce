@@ -371,6 +371,8 @@ Are there any features that you would like me to implement to improve the applic
 - [jQuery](https://code.jquery.com/ "jQuery") for implementing functions provided by materialize
 - [Pillow](https://pillow.readthedocs.io/en/stable/ "Pillow") for saving image file formats
 - [JSON formatter](https://jsonformatter.org/ "JSON formatter") for formatting JSON
+- [Django Countries](https://pypi.org/project/django-countries/#installation "Django Countries") for CountryField
+- [Django crispy forms](https://django-crispy-forms.readthedocs.io/en/latest/ "Django crispy forms") for forms.
 
 ---
 
