@@ -13,6 +13,7 @@ def mugs(request):
 
     return render(request, 'mugs/mugs.html', context)
 
+
 def mug_detail(request, mug_id):
     """ A view to show individual mug details """
 

@@ -88,7 +88,6 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-
     if request.method == 'POST':
         cart = request.session.get('cart', {})
 
