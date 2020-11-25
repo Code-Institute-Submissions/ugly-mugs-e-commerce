@@ -5,11 +5,19 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block inner_content %}
-<hr>
-<h2>{% trans "Sign Up" %}</h2>
-<hr>
-
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+<div class="row top">
+    <div class="col s12 center">
+        <i class="material-icons large bg-pink">local_cafe</i>
+    </div>
+</div>
+<div class="row center">
+    <div class="col s12">
+        <h4>{% trans "Let's Get Started" %}</h4>
+    </div>
+    <div class="col s12">
+        <p class="gray">Create a new account</p>
+    </div>
+</div>
 
 <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %}
@@ -20,5 +28,7 @@
   <a class="waves-effect waves-light btn" href="{% url 'account_login' %}">Back to Login</a>
   <button type="submit">{% trans "Sign Up" %}</button>
 </form>
+
+<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 
 {% endblock %}

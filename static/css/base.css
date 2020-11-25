@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+/* ------------------------------- Colors/Backgrounds */
+
+.bg-pink {
+    background-color: #ef2a82 !important;
+    color: #fff !important;
+    border-radius: 16px !important;
+}
+
+.gray {
+    color: #9098b1;
+}
+
 /* ------------------------------- Special paddings/margins/text */
 
 html {
@@ -17,6 +29,11 @@ h1 {
     font-size: 2.2rem;
 }
 
+h4 {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+}
+
 h5 {
     font-weight: 800 !important;
 }
@@ -27,9 +44,8 @@ strong {
 
 /* ------------------------------- Classes */
 
-.update-link,
-.remove-item {
-    cursor: pointer;
+.top {
+    margin-top: 5rem;
 }
 
 .padding {
@@ -89,6 +105,20 @@ strong {
     font-size: 1.2rem;
 }
 
+.btt-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 /* ------------------------------- Header */
 
 nav {
@@ -145,6 +175,9 @@ nav a {
     font-weight: 700;
     padding: 0.2rem 0px;
 }
+
+/* ------------------------------- Register */
+
 
 /* ------------------------------- Footer */
 
