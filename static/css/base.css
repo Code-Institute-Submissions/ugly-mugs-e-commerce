@@ -72,15 +72,21 @@ strong {
 }
 
 .campaign-title {
-
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #fff;
 }
 
-.campaign-name {
-    
+.campaign-name h2 {
+    font-weight: 900 !important;
+    font-size: 2.5rem !important;
+    color: #fff;
+    margin: 1rem 0 25rem 0;
 }
 
 .campaign-price {
-    
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
 /* ------------------------------- Header */
@@ -113,6 +119,31 @@ nav a {
 
 .sidenav li>a:focus {
     color: #ef2a82 !important;
+}
+
+/* ------------------------------- Mugs */
+
+.card .card-image .card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    bottom: 15rem !important;
+}
+
+.mug-name {
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.2rem 0px;
+}
+
+.mug-info {
+    color: #bbbbbb;
+    padding: 0.2rem 0px;
+}
+
+.mug-price {
+    color: #40bfff;
+    font-weight: 700;
+    padding: 0.2rem 0px;
 }
 
 /* ------------------------------- Footer */
