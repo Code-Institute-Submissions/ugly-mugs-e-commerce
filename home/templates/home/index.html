@@ -2,9 +2,62 @@
 {% load static %}
 
 {% block content %}
-<h1>It works!</h1>
+<div class="padding">
+    <div class="row">
+        <div class="col s12">
+            <h1>Hello! We make ugly mugs.</h1>
+        </div>
+        <div class="col s12">
+            <p>Show the world that your are so OMFG ready for a brand-new day, 
+            or show your wonderful spouse how much you love them with our incredibly
+            ugly <strong>limited edition</strong> mugs.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="carousel"> 
+                {% for mug in mugs %}
+                {% if mug.image %}
+                <a class="carousel-item" href="{% url 'mug_detail' mug.id %}"><img src="{{ mug.image.url }}" alt="{{ mug.name }}"></a>
+                {% else %}
+                <a class="carousel-item" href="{% url 'mug_detail' mug.id %}"><img src="{{ MEDIA_URL }}my-ugly-mug.jpg" alt="{{ mug.name }}"></a>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 center">
+            <a href="{% url 'mugs' %}" class="waves-effect waves-light btn">Browse the collection</a>
+        </div>
+    </div>
+</div>
+<div class="mug-of-the-month">
+    <div class="bg-image">  
+        <div class="row">
+            <div class="col s12 center campaign-title">
+                <p>Mug of the Month</p>
+            </div>
+            <div class="col s12 center campaign-name">
+                <h2>The Christmas Annihilator</h2>
+            </div>
+            <div class="col s12 center campaign-price">
+                <p>$29</p>
+            </div>
+            <div class="col s12 center">
+                <a href="{% url 'mugs' %}" class="waves-effect waves-light btn">So Wow! Buy Now!</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
 
-<h2>The new collection is here!</h2>
-<a class="waves-effect waves-light btn">Shop Now</a>
 
+{% block postloadjs %}
+{{ block.super }}
+<script>
+    $('.carousel').carousel({
+        indicators: true
+    });
+</script>
 {% endblock %}
