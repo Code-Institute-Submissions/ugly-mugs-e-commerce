@@ -208,6 +208,10 @@ STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+# STRIPE_PUBLIC_KEY = os.getenv('pk_test_51HjVihGzTE5Kpg61pU4Wy2EsmF5jMXfHCaAMkQRaYaxXK0dR6xYGLncOOSYEtbrJduvaesrgUH6zNW6qKoE0y7QY00p16sRT7Y', '')
+# STRIPE_SECRET_KEY = os.getenv('sk_test_51HjVihGzTE5Kpg61GzYHSKz1XXdZ64EX0BGJDFWOy0n4LGnhZQDsYyDaB4G5fmzQeIWooZwaPrCFD3AiIMoQNbQZ005ChEz7Kp', '')
+# STRIPE_WH_SECRET = os.getenv('whsec_XWvCtW3e279l1lSaLV7Ri7mVNEYCMPZi', '')
+
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
