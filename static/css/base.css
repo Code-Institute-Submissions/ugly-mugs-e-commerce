@@ -189,7 +189,7 @@ input:focus {
 }
 
 select {
-    display: block;
+    display: block !important;
 }
 
 /* ------------------------------- Allauth */
