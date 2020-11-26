@@ -48,6 +48,10 @@ strong {
     margin-top: 5rem;
 }
 
+.full-width {
+    width: 100%;
+}
+
 .padding {
     padding: 0rem 2rem;
 }
@@ -66,7 +70,7 @@ strong {
 }
 
 .mug-of-the-month {
-    height: 45rem;
+    height: 40rem;
 }
 
 .bg-image {
@@ -80,7 +84,7 @@ strong {
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 26rem;
+    background-size: 100%;
 }
 
 .bg-image .row {
@@ -97,7 +101,7 @@ strong {
     font-weight: 900 !important;
     font-size: 2.5rem !important;
     color: #fff;
-    margin: 1rem 0 25rem 0;
+    margin: 1rem 0 20rem 0;
 }
 
 .campaign-price {
@@ -176,8 +180,27 @@ nav a {
     padding: 0.2rem 0px;
 }
 
-/* ------------------------------- Register */
+/* ------------------------------- Forms */
 
+input:focus {
+    border-bottom: 1px solid #ef2a82 !important;
+    -webkit-box-shadow: 0 1px 0 0 #ef2a82 !important;
+    box-shadow: 0 1px 0 0 #ef2a82 !important;
+}
+
+/* ------------------------------- Allauth */
+
+.requiredField {
+    display: none;
+}
+
+.signup {
+    padding: 1rem;
+}
+
+.signup input {
+    margin-bottom: 1rem !important;
+}
 
 /* ------------------------------- Footer */
 
