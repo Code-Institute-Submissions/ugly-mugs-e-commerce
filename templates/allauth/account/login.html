@@ -54,11 +54,11 @@
             {% if redirect_field_value %}
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
             {% endif %}
-            <div class="col s6">
-                <a class="waves-effect waves-light btn" href="{% url 'home' %}">Home</a>
+            <div class="col s12">
+                <a class="waves-effect waves-light btn full-width" href="{% url 'home' %}">Home</a>
             </div>
-            <div class="col s6">
-                <button class="primary-action waves-effect waves-light btn" type="submit" name="action">{% trans 'Sign In' %}</button>
+            <div class="col s12">
+                <button class="primary-action waves-effect waves-light btn full-width" type="submit" name="action">{% trans 'Sign In' %}</button>
             </div>
             <div class="col s12">
                 <p class="mt-2">

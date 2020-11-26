@@ -1,5 +1,11 @@
-{% extends "base.html" %} {% load static %} {% block content %}
-<h1>It works!</h1>
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block extra_title %}
+    Mug Detail
+{% endblock %}
+
+{% block content %}
 
 <div class="row">
     <div class="col s12">
@@ -25,11 +31,7 @@
 <div class="row">
     <div class="col s12">
         <p class="mug-name">{{ mug.name }}</p>
-    </div>
-    <div class="col s12">
         <p class="mug-price">{{ mug.price }}</p>
-    </div>
-    <div class="col s12">
         <p class="mug-info">{{ mug.description }}</p>
     </div>
 </div>
@@ -54,13 +56,13 @@
                 />
                 <label for="quantity">Quantity</label>
             </div>
-            <div class="input-field col s6">
-                <a href="{% url 'mugs' %}" class="waves-effect waves-light btn">Keep Shopping</a>
+            <div class="col s12">
+                <a href="{% url 'mugs' %}" class="waves-effect waves-light btn full-width">Keep Shopping</a>
             </div>
             {% if mug.on_sale == True %}
-            <div class="input-field col s6">
+            <div class="col s12">
                 <button
-                class="btn waves-effect waves-light"
+                class="btn waves-effect waves-light full-width"
                 type="submit"
                 name="action"
                 >
@@ -69,7 +71,7 @@
                 </button>
             </div>
             {% else %}
-            <div class="col s6">
+            <div class="col s12">
                 <p>The Ugly Mug is out of stock. A new limited edition Ugly Mug will be released by the new month.</p>
             </div>
             {% endif %}

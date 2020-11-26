@@ -1,66 +1,110 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %}
+    Checkout Success
+{% endblock %}
+
 {% block content %}
-    <div class="row">
-        <div class="col">
-            <hr>
-            <h2>Thank You</h2>
-            <hr>
-            <p>Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
-        </div>
+<div class="overlay"></div>
+<div class="row">
+    <div class="col s12 center">
+        <h4>Thank You</h4>
     </div>
-    <div class="row">
-        <div class="col">
-            <p>Order Info:</p>
-            <p>Order Number:</p>
-            <p>{{ order.order_number }}</p>
-            <p>Order Date:</p>
-            <p>{{ order.date }}</p>
-            <p>Order Details:</p>
-            {% for item in order.lineitems.all %}
-            <p>{{ item.mug.name }}</p>
-            <p>{{ item.quantity }} @ ${{ item.mug.price }} each</p>
-            {% endfor %}
-            <p>Delivering To:</p>
-            <p>Order Full Name:</p>
-            <p>{{ order.full_name }}</p>
-            <p>Order Street Address 1:</p>
-            <p>{{ order.street_address1 }}</p>
-            {% if order.street_address2 %}
-            <p>Order Street Address 2:</p>
-            <p>{{ order.street_address2 }}</p>
-            {% endif %}
-            {% if order.county %}
-            <p>Order County:</p>
-            <p>{{ order.county }}</p>
-            {% endif %}
-            <p>Order Town Or City:</p>
-            <p>{{ order.town_or_city }}</p>
-            <p>Order Postal Code:</p>
-            <p>{{ order.postcode }}</p>
-            <p>Order Country:</p>
-            <p>{{ order.Country }}</p>
-            <p>Order Phone Number:</p>
-            <p>{{ order.phone_number }}</p>
-            <p>Billing Info:</p>
-            <p>Order Total:</p>
-            <p>{{ order.order_total }}</p>
-            <p>Delivery:</p>
-            <p>{{ order.delivery_cost }}</p>
-            <p>Grand Total:</p>
-            <p>{{ order.grand_total }}</p>
-        </div>
+    <hr>
+    <div class="col s12">
+        <p>Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
     </div>
-    <div class="row">
-        {% if from_profile %}
-            <a href="{% url 'profile' %}">
-                Back to Profile
-            </a>
-        {% else %}
-            <a href="{% url 'mugs' %}">
-                Now check out our collection!
-            </a>
+</div>
+<div class="row">
+    <div class="col s12">
+        <h4>Order Info:</h4>
+        <div class="row">
+            <div class="col s12">
+                <p>Order Number:</p>
+                <p>{{ order.order_number }}</p>
+            </div>
+            <div class="col s12">
+                <p>Order Date:</p>
+                <p>{{ order.date }}</p>
+            </div>
+            <div class="col s12">
+                <h4>Order Details:</h4>
+                {% for item in order.lineitems.all %}
+                <p>{{ item.mug.name }}</p>
+                <p>{{ item.quantity }} @ ${{ item.mug.price }} each</p>
+                {% endfor %}
+            </div>
+            <div class="col s12">
+                <h4>Delivering To:</h4>
+                <p>Order Full Name:</p>
+                <p>{{ order.full_name }}</p>
+            </div>
+            <div class="col s12">
+                <p>Order Street Address 1:</p>
+                <p>{{ order.street_address1 }}</p>
+            </div>
+
+        {% if order.street_address2 %}
+
+            <div class="col s12">
+                <p>Order Street Address 2:</p>
+                <p>{{ order.street_address2 }}</p>
+            </div>
+
         {% endif %}
-	</div>
+        {% if order.county %}
+
+            <div class="col s12">
+                <p>Order County:</p>
+                <p>{{ order.county }}</p>
+            </div>
+
+        {% endif %}
+
+            <div class="col s12">
+                <p>Order Town Or City:</p>
+                <p>{{ order.town_or_city }}</p>
+            </div>
+            <div class="col s12">
+                <p>Order Postal Code:</p>
+                <p>{{ order.postcode }}</p>
+            </div>
+            <div class="col s12">
+                <p>Order Country:</p>
+                <p>{{ order.country }}</p>
+            </div>
+            <div class="col s12">
+                <p>Order Phone Number:</p>
+                <p>{{ order.phone_number }}</p>
+            </div>
+            <div class="col s12">
+               <h4>Billing Info:</h4>
+                <p>Order Total:</p>
+                <p>{{ order.order_total }}</p>
+            </div>
+            <div class="col s12">
+                <p>Delivery:</p>
+                <p>{{ order.delivery_cost }}</p>
+            </div>
+            <div class="col s12">
+                <p>Grand Total:</p>
+                <p>{{ order.grand_total }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 center">
+        {% if from_profile %}
+        <a href="{% url 'profile' %}">
+            Back to Profile
+        </a>
+        {% else %}
+        <a href="{% url 'mugs' %}">
+            Now check out our collection!
+        </a>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}

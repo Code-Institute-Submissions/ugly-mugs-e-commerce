@@ -25,11 +25,11 @@
             {% if redirect_field_value %}
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
             {% endif %}
-            <div class="col s6">
-                <a class="waves-effect waves-light btn" href="{% url 'home' %}">Cancel</a>
+            <div class="col s12">
+                <a class="waves-effect waves-light btn full-width" href="{% url 'home' %}">Cancel</a>
             </div>
-            <div class="col s6">
-                <button class="waves-effect waves-light btn" type="submit" name="action">{% trans 'Sign Out' %}</button>
+            <div class="col s12">
+                <button class="waves-effect waves-light btn full-width" type="submit" name="action">{% trans 'Sign Out' %}</button>
             </div>
         </form>
     </div>

@@ -1,83 +1,76 @@
-{% extends "base.html" %} {% load static %} {% load cart_tools %} {% block content %}
-<div class="row">
-  <h1>It works!</h1>
-  <div class="col s12">
-    {% if cart_items %}
-    <table>
-      <thead>
-        <tr>
-          <th>Mug Info</th>
-          <th></th>
-          <th>Price</th>
-          <th>Qty</th>
-          <th>Subtotal</th>
-        </tr>
-      </thead>
+{% extends "base.html" %} {% load static %} {% load cart_tools %} 
 
-      <tbody>
-        {% for item in cart_items %}
-        <tr>
-          <td>
-            <img src="{{ item.mug.image.url }}">
-          </td>
-          <td>
-            <p><strong>{{ item.mug.name }}</strong></p>
-            <p>SKU: {{ item.mug.sku|upper }}</p>
-          </td>
-          <td>
-            <p>${{ item.mug.price }}</p>
-          </td>
-          <td>
-            <form class="update-form" method="POST" action="">
-                {% csrf_token %}
-                <div class="row">
-                    <div class="input-field col">
-                        <input
-                        id="first_name"
-                        type="number"
-                        name="quantity"
-                        value="{{ item.quantity }}"
-                        min="1"
-                        max="99"
-                        data-item_id="{{ item.item_id }}"
-                        id="id_qty_{{ item.item_id }}"
-                        class="validate"
-                        />
-                        <label for="quantity">Quantity</label>
-                    </div>
-                </div>
-                <a href=""><small>Update</small></a>
-                <a href=""><small>Remove</small></a>
-            </form>
-          </td>
-          <td>
-            <p>${{ item.mug.price | calc_subtotal:item.quantity }}</p>
-          </td>
-        </tr>
-        {% endfor %}
-        <tr>
-          <td>
-            <p>Cart Total: ${{ total|floatformat:2 }}</p>
-            <p>Delivery: ${{ delivery|floatformat:2 }}</p>
-            <p>Grand Total: ${{ grand_total|floatformat:2 }}</p>
-            {% if free_delivery_delta > 0 %}
-                <p>You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!</p>
-            {% endif %}
-          </td>
-        </tr>
-        <tr>
-            <td>
-                <a href="{% url 'mugs' %}" class="waves-effect waves-light btn">Keep Shopping</a>
-                <a href="{% url 'checkout' %}" class="waves-effect waves-light btn"><i class="material-icons">lock</i>Secure Checkout</a>
-            </td>
-        </tr>
-      </tbody>
-    </table>
-    {% else %}
-    <p>Your bag is empty.</p>
-    <a href="{% url 'mugs' %}" class="waves-effect waves-light btn">Keep Shopping</a>
-    {% endif %}
-  </div>
+{% block extra_title %}
+    Cart
+{% endblock %}
+
+{% block content %}
+
+<div class="row center">
+    <h4>Your Cart</h4>
 </div>
+
+{% if cart_items %}
+<div class="row">
+    <div class="col s12">
+        <ul class="collection">
+        {% for item in cart_items %}
+            <li class="collection-item avatar">
+                <img src="{{ item.mug.image.url }}" alt="" class="circle">
+                <span class="title">{{ item.mug.name }}</span>
+                <p>${{ item.mug.price }} <br>
+                    Second Line
+                </p>
+                <form class="update-form" method="POST" action="">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="input-field col">
+                            <input
+                            id="first_name"
+                            type="number"
+                            name="quantity"
+                            value="{{ item.quantity }}"
+                            min="1"
+                            max="99"
+                            data-item_id="{{ item.item_id }}"
+                            id="id_qty_{{ item.item_id }}"
+                            class="validate"
+                            />
+                            <label for="quantity">Quantity</label>
+                        </div>
+                    </div>
+                    <a href=""><small>Update</small></a>
+                    <a href=""><small>Remove</small></a>
+                </form>
+                <p>${{ item.mug.price | calc_subtotal:item.quantity }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12">
+        <p>Cart Total: ${{ total|floatformat:2 }}</p>
+        <p>Delivery: ${{ delivery|floatformat:2 }}</p>
+        <p>Grand Total: ${{ grand_total|floatformat:2 }}</p>
+        {% if free_delivery_delta > 0 %}
+        <p>You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!</p>
+        {% endif %}
+    </div>
+    <div class="col s12">
+        <a href="{% url 'mugs' %}" class="waves-effect waves-light btn full-width">Keep Shopping</a>
+        <a href="{% url 'checkout' %}" class="waves-effect waves-light btn full-width"><i class="material-icons">lock</i>Secure Checkout</a>
+    </div>
+</div>
+{% else %}
+<div class="row center">
+    <div class="col s12">
+        <p>Your bag is empty.</p>
+    </div>
+    <div class="col s12">
+        <a href="{% url 'mugs' %}" class="waves-effect waves-light btn full-width">Keep Shopping</a>
+    </div>
+</div>
+{% endif %}
 
 {% endblock %}
