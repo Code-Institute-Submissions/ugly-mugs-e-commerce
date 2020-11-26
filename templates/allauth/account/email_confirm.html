@@ -29,7 +29,7 @@
     <div class="col s12">
         <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
             {% csrf_token %}
-            <button type="submit">{% trans 'Confirm' %}</button>
+            <button class="waves-effect waves-light btn full-width" type="submit" name="action">{% trans 'Confirm' %}</button>
         </form>
     </div>
 </div>
