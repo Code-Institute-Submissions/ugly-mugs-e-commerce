@@ -64,6 +64,7 @@ strong {
 .btn, .btn-large, .btn-small {
     color: #fff !important;
     background-color: #ef2a82 !important;
+    border-radius: 5px !important;
 }
 
 .btn, .btn-large, .btn-small, .btn-flat {
@@ -182,8 +183,20 @@ nav a {
 
 /* ------------------------------- Forms */
 
-input:focus {
-    border-bottom: 1px solid #ef2a82 !important;
+input {
+    border: 1px solid #bbbbbb !important;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 0 0 #bbbbbb !important;
+    box-shadow: 0 1px 0 0 #bbbbbb !important;
+
+    width: 75% !important;
+    margin: 0.5rem !important;
+}
+
+input:focus,
+input:active {
+    border: 1px solid #ef2a82 !important;
+    border-radius: 5px;
     -webkit-box-shadow: 0 1px 0 0 #ef2a82 !important;
     box-shadow: 0 1px 0 0 #ef2a82 !important;
 }
@@ -204,6 +217,11 @@ select {
 
 .signup input {
     margin-bottom: 1rem !important;
+}
+
+.ctrlHolder {
+    display: flex;
+    align-items: center;
 }
 
 /* ------------------------------- Footer */
