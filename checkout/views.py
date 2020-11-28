@@ -38,26 +38,33 @@ def add_to_cart(request, item_id):
                               f'quantity to {cart[item_id]}'))
     else:
         cart[item_id] = quantity
-        messages.success(request, f'Added {mug.name} to your bag')
+        messages.success(request, f'Added {mug.name} to your cart')
 
     request.session['cart'] = cart
     return redirect(redirect_url)
 
 
-#def adjust_cart(request, item_id):
-#    """ Adjust the quantity of the specified mug to the specified amount """
-#
-#    quantity = int(request.POST.get('quantity'))
-#
- #   cart = request.session.get('cart', {})
-#
-#    if quantity > 0:
-##        cart[item_id] = quantity
-#    else:
- #       cart.pop(item_id)
-#
- #   request.session['cart'] = cart
-#    return redirect(reverse('view_cart'))
+def adjust_cart(request, item_id):
+    """ Adjust the quantity of the specified mug to the specified amount """
+
+    mug = get_object_or_404(Mug, pk=item_id)
+    quantity = int(request.POST.get('quantity'))
+
+    cart = request.session.get('cart', {})
+
+    if quantity > 0:
+        cart[item_id] = quantity
+        messages.success(request,
+                             (f'Updated {mug.name} '
+                              f'quantity to {cart[item_id]}'))
+    else:
+        cart.pop(item_id)
+        messages.success(request,
+                             (f'Removed {mug.name} '
+                              f'from your cart'))
+
+    request.session['cart'] = cart
+    return redirect(reverse('view_cart'))
 
 
 #def remove_from_cart(request, item_id):

@@ -21,12 +21,11 @@
                 <p>${{ item.mug.price }} <br>
                     Second Line
                 </p>
-                <form class="update-form" method="POST" action="">
+                <form class="update-form" method="POST" action="{% url 'adjust_cart' item.item_id %}">
                     {% csrf_token %}
                     <div class="row">
                         <div class="input-field col">
                             <input
-                            id="first_name"
                             type="number"
                             name="quantity"
                             value="{{ item.quantity }}"
@@ -39,8 +38,8 @@
                             <label for="quantity">Quantity</label>
                         </div>
                     </div>
-                    <a href=""><small>Update</small></a>
-                    <a href=""><small>Remove</small></a>
+                    <button type="submit" name="action" class="btn waves-effect waves-light">Update</button>
+                    <a class="remove-item btn waves-effect waves-light" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                 </form>
                 <p>${{ item.mug.price | calc_subtotal:item.quantity }}</p>
             </li>
@@ -73,4 +72,22 @@
 </div>
 {% endif %}
 
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/cart/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
 {% endblock %}
