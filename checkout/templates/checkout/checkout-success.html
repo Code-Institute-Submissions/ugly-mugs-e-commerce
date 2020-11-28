@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col s12">
                 <p>Order Number:</p>
-                <p>{{ order.order_number }}</p>
+                <p>{{ order.order_number|truncatechars:6 }}</p>
             </div>
             <div class="col s12">
                 <p>Order Date:</p>
