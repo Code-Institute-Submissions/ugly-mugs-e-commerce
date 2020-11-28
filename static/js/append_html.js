@@ -17,6 +17,15 @@ $(document).ready(function() {
     $( "div[id='div_id_default_town_or_city']" ).addClass('location-icon');
     $( "div[id='div_id_default_county']" ).addClass('location-icon');
     $( "div[id='div_id_default_postcode']" ).addClass('location-icon');
+
+    // Append classes to input fields in stripe
+    $( "div[id='div_id_full_name']" ).addClass('account-icon');
+    $( "div[id='div_id_phone_number']" ).addClass('phone-icon');
+    $( "div[id='div_id_street_address1']" ).addClass('location-icon');
+    $( "div[id='div_id_street_address2']" ).addClass('location-icon');
+    $( "div[id='div_id_town_or_city']" ).addClass('location-icon');
+    $( "div[id='div_id_county']" ).addClass('location-icon');
+    $( "div[id='div_id_postcode']" ).addClass('location-icon');
 });
 
 $(document).ready(function() {

@@ -185,7 +185,7 @@ nav a {
 
 input {
     border: 1px solid #bbbbbb !important;
-    border-radius: 5px;
+    border-radius: 5px !important;
     -webkit-box-shadow: 0 1px 0 0 #bbbbbb !important;
     box-shadow: 0 1px 0 0 #bbbbbb !important;
 
@@ -196,7 +196,7 @@ input {
 input:focus,
 input:active {
     border: 1px solid #ef2a82 !important;
-    border-radius: 5px;
+    border-radius: 5px !important;
     -webkit-box-shadow: 0 1px 0 0 #ef2a82 !important;
     box-shadow: 0 1px 0 0 #ef2a82 !important;
 }
