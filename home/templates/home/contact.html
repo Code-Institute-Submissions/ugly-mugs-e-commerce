@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}
+    About
+{% endblock %}
+
+{% block content %}
+<div class="row no-margin">
+    <div class="col s12">
+        <img class="img" src="{{ MEDIA_URL }}my-ugly-mug.jpg" alt="Contact">
+    </div>
+    <div class="col s12 content-section">
+        <p>Contact</p>
+        <p><strong>Not ugly enough for ya? Let us know or just say hello.</strong></p>
+        <a href="">hello@uglymugs.com</a>
+    </div>
+</div>
+{% endblock %}

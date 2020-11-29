@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}
+    About
+{% endblock %}
+
+{% block content %}
+<div class="row no-margin">
+    <div class="col s12">
+        <img class="img" src="{{ MEDIA_URL }}my-ugly-mug.jpg" alt="About">
+    </div>
+    <div class="col s12 content-section">
+        <p>About</p>
+        <p><strong>We're all bout über limited edition mugs. The uglier, the grander. 
+                   And remember that our mugs are certified always half empty.</strong></p>
+        <a href="{% url 'mugs' %}">Take me to the mug of the month already!</a>
+    </div>
+</div>
+{% endblock %}
