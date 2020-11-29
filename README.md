@@ -1,12 +1,25 @@
-# Megapixel Groups Ugly Mugs
+# UglyMugs.com
 
-Data Centric Development Milestone Project @ Code Institute
+Full Stack Frameworks With Django Milestone Project @ Code Institute
 
-This project is a creative hub where creatives and employers meet.
-The web application is built using flask and pymongo.
-It allows you to perform CRUD operations for users, creatives, briefs and skills.
-It has a form for logging in user and a form for contacting the creative/employer.
-The application provides contact information and a link to Megapixels marketing services.
+
+
+This project is an e-commerce that sells limited edition ugly mugs to people who loves ugly mugs. 
+The shop offers ugly mugs that are only created in a limited number, with new designs releasing continuously.
+It allows the shopper to perform a number of actions including:
+
+- Navigate the site for info
+- View mugs
+- View the "mug of the month"
+- Add mugs to the cart
+- Adjust, update and remove items in the cart
+- Check out quickly with no hassles
+- Receive and view order confirmations
+- Store my shipping details and my order confirmation in a user profile
+
+It allows the store admin to add, edit/update and delete a mug from the backend.
+
+The web application is built using [Django](https://www.djangoproject.com/ "Django") as a [Python](https://www.python.org/ "Python") Web framework.
 You can find the application [here](https://creative-hub.herokuapp.com/).
 
 ***
@@ -50,21 +63,20 @@ You can find the application [here](https://creative-hub.herokuapp.com/).
     - [Acknowledgements](#acknowledgements)
 - [Resources](#resources)
 
-[Back to Top](#megapixel-groups-ugly-mugs)
+[Back to Top](#uglymugs.com)
 ***
 
 ## UX
 
-The application is designed using the [materialize](https://materializecss.com/) framework.
+The application is designed using the [materialize](https://materializecss.com/ "Materialize") framework.
 It is designed to be user friendly, simple and clean with the purpose to present all information in a visually appealing manner on all devices.
-It is made for creatives/employers who wants to connect with one another.
-They want to be able to create a user, creative ads and briefs.
-They want to edit user, creative ad and brief details.
-They want to be able to find creative ads and briefs.
-They want to be able to delete creative ads and briefs.
+It is made for shoppers who wants to view and buy ugly mugs.
+They want to easily use and navigate the site.
+They easily want to browse and purchase mugs.
+For convenience they want a login that stores shipping details and order history.
 To provide that information this application is a simple and straightforward web application.
-It contains an index page, user interface, sections for creative ads/briefs as well as for performing CRUD operations, contact etc.
-The footer provides contact information and a link to Megapixels marketing services.
+It contains index, about, contact, register/login/logout, profile, mugs, mug details, cart, checkout and checkout success pages.
+The footer provides further navigation links for a better user experience.
 
 ---
 
@@ -139,61 +151,27 @@ There are 4 collection in the database:
 
 ### User Stories
 
-The user stories are showing pictures from an earlier stage of the project and not the deployed version.
 You can access the deployed project [here](https://creative-hub.herokuapp.com/) to try the user stories yourself.
 
-#### Story 1
+- As a shopper I want to be able to view a list of mugs si that I can select some to purchase
+- As a shopper I want to be able to view individual mug details so that I can get the details I wan
+- As a shopper I want to be able to easily navigate on the site  so that I can find what I need
+- As a shopper I want to be able to easily select the quantity of a mug when purchasing it so that I can ensure I don't accidentaly select the wrong mug or quantity
+- As a shopper I want to be able to view items in my bag to be purchased so that I can identify the total cost of my purchase and all items I will receive
+- As a shopper I want to be able to adjust the quantity of individual items in my bag so that I can easily make changes to my purchase before checkout.
+- As a shopper I want to be able to easily enter my payment information so that I can check out quickly and with no hassles
+- As a shopper I want to be able to feel my personal and payment information is safe and secure so that I can confidently provide the needed information to make a purchase
+- As a shopper I want to be able to view an order confirmation after checkout so that I can verify that I haven't made any mistakes
 
-As a user, I want to click on a navigation link -
-![alt text](static/images/click-create-account.jpg "Click Create Account")
+- As a user I want to be able to easily register for an account so that I can have a personal account and be able to view my profile
+- As a user I want to be able to easily login and logout so that I can access my personal account information
+- As a user I want to be able to easily recover my password in case I forget it so that I can recover access to my account
+- As a user I want to be able to receive an email confirmation after registering so that I can verify that my account registration was successful
+- As a user I want to be able to have a personalized user profile so that I can view my personal order history and save my payment information
 
-So that I can get navigated towards the desired link location.
-![alt text](static/images/location-create-account.jpg "Location Create Account")
-
-#### Story 2
-
-As a user, I want to create a user account -
-![alt text](static/images/create-user-account.jpg "Create User Account")
-
-So that I can log in to my user interface
-![alt text](static/images/user-interface.jpg "User Interface")
-
-#### Story 3
-
-As a user, I want to be able to log out -
-![alt text](static/images/log-out.jpg "Log out")
-
-And I want to be able to log in.
-![alt text](static/images/log-in.jpg "Log in")
-
-#### Story 4
-
-As a user, I want to be able to create a brief -
-![alt text](static/images/create-brief.jpg "Create Brief")
-
-And a creative ad.
-![alt text](static/images/create-creative-ad.jpg "Create Creative Ad")
-
-#### Story 5
-
-As a user, I want to be able to delete a brief/creative ad -
-![alt text](static/images/delete-creative-ad.jpg "Delete Creative Ad")
-
-And edit/update a brief/creative ad.
-![alt text](static/images/update-brief.jpg "Update Brief")
-
-#### Story 6
-
-As a user, I want to be able to find briefs/creative ads -
-![alt text](static/images/find-creatives.jpg "Find Creatives")
-
-And contact the creative/employer.
-![alt text](static/images/contact-employer.jpg "Contact Employer")
-
-#### Story 7
-
-As a user, I want to get information (social links, contact info etc.) about the owner of the site, so that I can contact the owner if I want to.
-![alt text](static/images/contact-information.jpg "Contact Information")
+- As a store owner I want to be able to add a mug so that I can add new items to my store
+- As a store owner I want to be able to edit/update a mug so that I can change mug prices, descriptions and other mug criteria
+- As a store owner I want to be able to delete a mug so that I can remove items that are no longer for sale
 
 ---
 
@@ -203,27 +181,32 @@ I want to create an e-commerce to sell ugly mugs for people who loves ugly mugs
 The shopper gets the benefit of buying that ugly mug that they love. 
 The shopper gets the benefit of a seamless and secure shopping experience with control of their shopping with e-mail confirmations etc. 
 The site user can easily register an account and view all purchase history and information about the user. 
-The store owner can add, edit and delete products. 
+The store owner can add, edit and delete mugs. 
 
 ---
 
 ### Scope
 
+The first release of the website will be simple as much functionality is not needed yet as there only will be 1 mug available on the site.
+For the projects sake I added a mugs view with pagination which I can build upon later on when filtering and search functions are needed.
+
 A shopper can view the website on any device including mobile, tablet, desktop.
-A shopper can view products and product details before adding it to the cart.
-A shopper can add, edit and delete products to and from the cart.
+A shopper can view mugs and mug details before adding it to the cart.
+A shopper can add, edit and delete mugs to and from the cart.
 A shopper can find purchase history and orders.
 A shopper can register and edit an account including shipping and billing details.
 A shopper can filter mugs on years / months.
 A shopper can log in and out of the account.
 A shopper can navigate easily and make safe purchases.
 A shopper can't make purchases that are empty and submit forms that doesn't meet all the requirements.
-A store owner can manage products in the backend via staff login.
+A store owner can manage mugs in the backend via staff login.
 
 Future releases may introduce:
 More interaction with the shoppers and how they can utilize the website (e.g search function when required).
 Use data in fun and valueable ways for the shoppers and the store owners. Ex. show how many mugs each edition sold for.
-Introduce more products and methods to purchase the products e.g introduce subscriptions.
+Introduce more mugs and methods to purchase the mugs e.g introduce subscriptions.
+Add functionality for register with social media account.
+Overall improvements to each part of the website.
 
 ---
 
@@ -251,7 +234,7 @@ I used from SF Pro Text and SF Pro Display [Google Fonts]():
 - #111111 - font Colors
 - #222222 - background Colors
 
-[Back to Top](#megapixel-groups-ugly-mugs)
+[Back to Top](#uglymugs.com)
 ***
 
 ## Features
@@ -268,86 +251,93 @@ A materialize [component](https://materializecss.com/navbar.html "Materialize Na
 
 #### Footer
 
-A materialize [component](https://materializecss.com/footer.html "Materialize Footer").
+A materialize [component](https://materializecss.com/footer.html "Materialize Footer") for improving user experience.
 
 #### Icons
 
-A materialize [component](https://materializecss.com/icons.html "Materialize Icons").
+A materialize [component](https://materializecss.com/icons.html "Materialize Icons") for improving user experience.
 
 #### Forms
 
-##### Text Inputs
-
-Materialize [form input](https://materializecss.com/text-inputs.html "Materialize Text Inputs").
-
-##### Select
-
-Materialize [form select](https://materializecss.com/select.html "Materialize Select").
-
-##### Date picker
-
-Materialize [form date picker](https://materializecss.com/pickers.html "Materialize Pickers").
+Forms to allow users to pass information to the store.
 
 #### User login
 
-The application allows the user to log in and out of a session.
+Registration, login and logout that stores shipping details and order history.
 
-#### CRUD Operations
+#### Showcase mugs
 
-The application operates to a MongoDB with 4 collections - users, briefs, creatives and skills.
+The application allows the shopper to view mugs in the store.
 
-##### Create document
+#### View cart
 
-The application allows the user to create a document in the MongoDB.
+The application allows the shopper to view items in the cart.
 
-##### Read document
+#### Add to cart
 
-The application allows the user to read a document in the MongoDB.
+The application allows the shopper to add items to the cart.
 
-##### Update document
+#### Edit/update cart
 
-The application allows the user to update a document in the MongoDB.
+The application allows the shopper to edit/update items in the cart.
 
-##### Delete document
+#### Remove from cart
 
-The application allows the user to delete a document in the MongoDB.
+The application allows the shopper to remove items from the cart.
 
-#### Send email
+#### Checkout solution
 
-I use [emailjs](https://www.emailjs.com/ "EmailJS") to let the user send emails to the site owner.
-The user gets notified wether it is a success or of it fails.
+The application provides a checkout solution using [Stripe](https://stripe.com/en-se "Stripe").
+
+#### Alerts / notifications
+
+The application communicates with the user notifying what's going on using [toasts](https://materializecss.com/toasts.html "Toasts") and [messages](https://docs.djangoproject.com/en/3.1/ref/contrib/messages/#using-messages-in-views-and-templates "Django messages").
+
+#### Pagination
+
+The application provides [pagination](https://materializecss.com/pagination.html "Pagination") to the website clean.
+
+#### Add mugs
+
+The application allows the store owner to add mugs to the db.
+
+#### Edit/update mugs
+
+The application allows the store owner to edit/update mugs in the db.
+
+#### Remove mugs
+
+The application allows the store owner to remove mugs from the db.
 
 ---
 
 ### Features Left to Implement
 
-#### Smarter interactivity for users
+#### More and better use of mugs
 
-Make functions, collections and the exchange of information between users better.
-E.g. pagination, search functions for retrieving data from the backend, categorized in a more user friendly way as the application grows larger.
+As more mugs and additional products/services will be released I want to improve functionality for searching and browsing mugs.
 
-#### Recourses, functions and content
+#### Social media accounts
 
-Provide more information, resources and possibilities to create better ads to improve success rate for user interaction.
+Allow users to register and login with social media accounts.
 
-#### Add images, links etc.
+#### Overview / data / statistics
 
-Give users the ability to add images, documents, links etc.
+Use data gathered to provide value for shoppers and store owners.
 
 #### Defensive design
 
-Make the application more compatible with browsers other than Chrome. Customize the 404 error webpage.
-More secure way to log in.
+Continue to improve the defensive design to keep the website safe for shoppers and the store owner.
 
 #### Livechat and chat function
 
-I might add a livechat for contacting the site owner and a chat function for communication between users.
+I might add a livechat for contacting the store.
 
 #### Your thoughts
 
 Are there any features that you would like me to implement to improve the application? Please get in touch and share your thoughts.
 
-[Back to Top](#megapixel-groups-ugly-mugs)
+[Back to Top](#uglymugs.com)
 ***
 
 ## Technologies Used
@@ -372,9 +362,20 @@ Are there any features that you would like me to implement to improve the applic
 - [Pillow](https://pillow.readthedocs.io/en/stable/ "Pillow") for saving image file formats
 - [JSON formatter](https://jsonformatter.org/ "JSON formatter") for formatting JSON
 - [Django Countries](https://pypi.org/project/django-countries/#installation "Django Countries") for CountryField
-- [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/ "django-crispy-forms") for forms.
-- [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html "Boto3") for AWS SDK.
-- [django-storages](https://django-storages.readthedocs.io/en/latest/ "django-storages") is a collection of custom storage backends for Django.
+- [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/ "django-crispy-forms") for forms
+- [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html "Boto3") for AWS SDK
+- [django-storages](https://django-storages.readthedocs.io/en/latest/ "django-storages") is a collection of custom storage backends for Django
+- [temp-mail.org](https://temp-mail.org/ "temp-mail.org") for testing the site
+- [Stripe](https://stripe.com/ "Stripe") for receiving payments for the mugs
+- [Gitpod](https://www.gitpod.io/ "Gitpod") was used as a code editor
+- [Git](https://git-scm.com/ "Git") version control
+- [GitHub](https://github.com/ "GitHub") used as a Git repository hosting service
+- [Heroku](https://www.heroku.com/ "Heroku") is a container-based cloud platform, I used Heroku to deploy this app.
+- [W3C Validator](https://validator.w3.org/ "W3C Validator") used to check the validity of my HTML and CSS
+- [PEP 8 Online Validator](http://pep8online.com/ "PEP 8 Online Validator") used to check my Python code
+- [Balsamiq](https://balsamiq.com/ "Balsamiq") for creating wireframes
+- [Figma](https://www.figma.com/ "Figma") for creating mockups
+- [AWS S3 Bucket](https://aws.amazon.com/s3/ "AWS S3 Bucket") as a cloud storage
 
 ---
 
@@ -382,7 +383,7 @@ Are there any features that you would like me to implement to improve the applic
 - [PostgreSQL](https://www.postgresql.org/ "PostgreSQL") database service provided directly by Heroku
 - [SQlite3](https://www.sqlite.org/index.html "SQlite3") provided by django
 
-[Back to Top](#megapixel-groups-ugly-mugs) 
+[Back to Top](#uglymugs.com) 
 ***
 
 ## Testing
@@ -555,7 +556,7 @@ Add settings accordingly to settings.py.
 
 6. Run the application.
 
-[Back to Top](#megapixel-groups-ugly-mugs)
+[Back to Top](#uglymugs.com)
 ***
 
 ## Credits
@@ -587,9 +588,9 @@ The Icons used for this project was from [Materialize](https://materializecss.co
 
 ### Acknowledgements
 
-Big thanks to my mentor who provided me with tips, support and some helpful resources.
+Big thanks to my mentor who provided me with tips, support and helpful resources.
 
-[Back to Top](#megapixel-groups-ugly-mugs)
+[Back to Top](#uglymugs.com)
 ***
 
 ## Resources

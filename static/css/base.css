@@ -169,6 +169,8 @@ opacity:0.9;
 nav {
     height: 5rem !important;
     background-color: #fff !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid #0F0F10;
 }
 
 nav .brand-logo {
@@ -303,4 +305,16 @@ select {
     justify-content: center;
     margin: 0;
     height: 100%;
+}
+
+/* ------------------------------- Media Queries */
+
+@media screen and (min-width: 1024px) {
+    main {
+        padding: 0px 10%;
+    }
+
+    footer {
+        margin: 0px 10% !important;
+    }
 }
