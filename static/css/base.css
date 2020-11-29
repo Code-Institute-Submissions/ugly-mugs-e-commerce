@@ -228,7 +228,6 @@ input {
     -webkit-box-shadow: 0 1px 0 0 #bbbbbb !important;
     box-shadow: 0 1px 0 0 #bbbbbb !important;
 
-    width: 75% !important;
     margin: 0.5rem !important;
 }
 
@@ -242,6 +241,11 @@ input:active {
 
 select {
     display: block !important;
+}
+
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    opacity: 1 !important; 
+    border-bottom: none !important;
 }
 
 /* ------------------------------- Allauth */

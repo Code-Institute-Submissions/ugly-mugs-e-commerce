@@ -67,6 +67,8 @@
 					
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li><a href="{% url 'about' %}">ABOUT</a></li>
+						<li><a href="{% url 'mugs' %}">THE COLLECTION</a></li>
+						<li><a href="{% url 'contact' %}">CONTACT</a></li>
 						{% if request.user.is_authenticated %}
 						<li><a href="{% url 'profile' %}">MY PROFILE</a></li>
 						<li><a href="{% url 'account_logout' %}">LOGOUT</a></li>
@@ -74,14 +76,15 @@
 						<li><a href="{% url 'account_signup' %}">REGISTER</a></li>
 						<li><a href="{% url 'account_login' %}">LOGIN</a></li>
 						{% endif %}
-						<li><a href="{% url 'mugs' %}">THE COLLECTION</a></li>
-						<li><a href="{% url 'contact' %}">CONTACT</a></li>
 					</ul>
 				</div>
 			</nav>
 
 			<ul class="sidenav" id="mobile-demo">
+                <li><a href="{% url 'home' %}">HOME</a></li>
 				<li><a href="{% url 'about' %}">ABOUT</a></li>
+				<li><a href="{% url 'mugs' %}">THE COLLECTION</a></li>
+				<li><a href="{% url 'contact' %}">CONTACT</a></li>
 				{% if request.user.is_authenticated %}
 				<li><a href="{% url 'profile' %}">MY PROFILE</a></li>
 				<li><a href="{% url 'account_logout' %}">LOGOUT</a></li>
@@ -89,8 +92,7 @@
 				<li><a href="{% url 'account_signup' %}">REGISTER</a></li>
 				<li><a href="{% url 'account_login' %}">LOGIN</a></li>
 				{% endif %}
-				<li><a href="{% url 'mugs' %}">THE COLLECTION</a></li>
-				<li><a href="{% url 'contact' %}">CONTACT</a></li>
+                <li><a class="sidenav-close" href="#!">CLOSE</a></li>
 			</ul>
 		</header>
 

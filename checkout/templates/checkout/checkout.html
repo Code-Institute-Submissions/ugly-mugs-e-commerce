@@ -69,16 +69,28 @@
                     {{ order_form.country | as_crispy_field }}
                 </div>
 			</div>
-
-			{% if user.is_authenticated %}
-			<label for="id-save-info">Save this delivery information to my profile</label>
-			<input type="checkbox" id="id-save-info" name="save-info" checked>
+            
+            {% if user.is_authenticated %}
+            
+            <div class="row">
+                <div class="col s2">
+                    <input type="checkbox" id="id-save-info" name="save-info" checked="checked">
+                </div>
+                <div class="col s10">
+                    <label for="id-save-info right ">Save this delivery information to my profile</label>
+                </div>
+            </div>
             {% else %}
-			<label for ="id_save-info">
-            <a href="{% url 'account_signup' %}">Create an account</a> or
-            <a href="{% url 'account_login' %}">login</a> to save this information
-            </label>
+            <div class="row">
+                <div class="col s2">
+                    <label for ="id_save-info">
+                        <a href="{% url 'account_signup' %}">Create an account</a> or
+                        <a href="{% url 'account_login' %}">login</a> to save this information
+                    </label>
+                </div>
+            </div>
             {% endif %}
+                
 
             <div class="row">
                 <div class="col s12">
