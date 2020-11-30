@@ -76,12 +76,25 @@ strong {
     background-size: 100%;
 }
 
+.content-row {
+    position: relative;
+    min-height: 40rem;
+}
+
 .content-section {
     background-color: #cacbd4;
     color: #fff;
 
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+
+    position: absolute;
+    bottom: 0px;
+    min-height: 20rem !important;
+}
+
+.content-item {
+    font-size: 1.4rem
 }
 
 .border-top {
@@ -284,6 +297,10 @@ select {
 
 .indicator-item.active {
     background-color: #0f0f10 !important;
+}
+
+.carousel-item > img {
+    transform: rotate(-30deg);
 }
 
 /* ------------------------------- Loading Spinner */
