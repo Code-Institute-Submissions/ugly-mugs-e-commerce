@@ -14,16 +14,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col s12">
-            <div class="carousel"> 
-                {% for mug in mugs %}
-                {% if mug.image %}
-                <a class="carousel-item" href="{% url 'mug_detail' mug.id %}"><img src="{{ mug.image.url }}" alt="{{ mug.name }}"></a>
-                {% else %}
-                <a class="carousel-item" href="{% url 'mug_detail' mug.id %}"><img src="{{ MEDIA_URL }}my-ugly-mug.jpg" alt="{{ mug.name }}"></a>
-                {% endif %}
-                {% endfor %}
-            </div>
+        <div class="col s12 center">
+            <img class="img" src="{{ MEDIA_URL }}ugly-mug.jpg" alt="Ugly Mug">
         </div>
     </div>
     <div class="row">
@@ -50,14 +42,4 @@
         </div>
     </div>
 </div>
-{% endblock %}
-
-
-{% block postloadjs %}
-{{ block.super }}
-<script>
-    $('.carousel').carousel({
-        indicators: true
-    });
-</script>
 {% endblock %}

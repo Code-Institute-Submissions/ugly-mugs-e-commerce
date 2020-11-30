@@ -108,22 +108,22 @@
                 {% with message.level as level %}
                     {% if level == 40 %}
                         <script>
-                            var toastHTML = '<span>{{ message }} Error</span><button class="btn-flat toast-action" onclick="M.Toast.dismissAll();>Close</button>';
+                            var toastHTML = '<span>{{ message }}</span><button class="btn-flat toast-action" onclick="M.Toast.dismissAll();>Close</button>';
                             M.toast({html: toastHTML});
                         </script>
                     {% elif level == 30 %}
                         <script>
-                            var toastHTML = '<span>{{ message }} Warning</span><button class="btn-flat toast-action" onclick="M.Toast.dismissAll();>Close</button>';
+                            var toastHTML = '<span>{{ message }}</span><button class="btn-flat toast-action" onclick="M.Toast.dismissAll();>Close</button>';
                             M.toast({html: toastHTML});
                         </script>
                     {% elif level == 25 %}
                         <script>
-                            var toastHTML = '<span>{{ message }} Success</span><button class="btn-flat toast-action" onclick="M.Toast.dismissAll();">Close</button>';
+                            var toastHTML = '<span>{{ message }}</span><button class="btn-flat toast-action" onclick="M.Toast.dismissAll();">Close</button>';
                             M.toast({html: toastHTML});
                         </script>
                     {% else %}
                         <script>
-                            var toastHTML = '<span>{{ message }} Info</span><button class="btn-flat toast-action" onclick="M.Toast.dismissAll();>Close</button>';
+                            var toastHTML = '<span>{{ message }}</span><button class="btn-flat toast-action" onclick="M.Toast.dismissAll();>Close</button>';
                             M.toast({html: toastHTML});
                         </script>
                     {% endif %}
@@ -166,7 +166,6 @@
 	<script>
 		$(document).ready(function(){
             $('.sidenav').sidenav();
-            $('.carousel').carousel();
         });
 	</script>
 

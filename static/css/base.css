@@ -56,6 +56,10 @@ strong {
     margin-bottom: 0px !important;
 }
 
+.no-padding {
+    padding: 0px !important;
+}
+
 .full-width {
     width: 100%;
     margin: 0.5rem 0px;
@@ -79,6 +83,16 @@ strong {
 .content-row {
     position: relative;
     min-height: 40rem;
+}
+
+.content-img {
+    padding: 0rem !important;
+
+    max-height: 100%;
+    max-width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .content-section {
@@ -117,8 +131,7 @@ strong {
 
 .bg-image {
     /* The image used */
-    background-image: linear-gradient(rgba(202, 203, 212, 0.5), rgba(202, 203, 212, 0.5)),
-                      url("/media/my-ugly-mug.jpg");
+    background-image: url("/media/mug-of-the-month.jpg");
 
     /* Full height */
     height: 100%;
@@ -287,20 +300,6 @@ select {
 .page-footer {
     color: #0f0f10 !important;
     background-color: #fff !important;
-}
-
-/* ------------------------------- Carousel */
-
-.indicator-item {
-    background-color: #ebf0ff !important;
-}
-
-.indicator-item.active {
-    background-color: #0f0f10 !important;
-}
-
-.carousel-item > img {
-    transform: rotate(-30deg);
 }
 
 /* ------------------------------- Loading Spinner */
