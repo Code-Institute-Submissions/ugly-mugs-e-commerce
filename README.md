@@ -82,6 +82,8 @@ The footer provides further navigation links for a better user experience.
 
 ### Database structure
 
+Users: https://www.webforefront.com/django/setupdjangousers.html#django-user-system
+
 There are 4 collection in the database:
 
 - users:
