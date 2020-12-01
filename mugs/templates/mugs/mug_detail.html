@@ -43,12 +43,12 @@
         {% csrf_token %}
         <div class="row">
             <div class="input-field col s12 qty-box">
-                <div class="col s4 qty-div-dec">
+                <div class="col s4 qty-div-dec no-padding">
                     <a class=" btn waves-effect waves-light dec qty">
                         -
                     </a>
                 </div>
-                <div class="col s4 center">
+                <div class="col s4 center no-padding">
                     <input
                     id="quantity"
                     type="number"
@@ -62,7 +62,7 @@
                     />
                     <label for="quantity"></label>
                 </div>
-                <div class="col s4">
+                <div class="col s4 qty-div-inc no-padding">
                     <a class=" btn waves-effect waves-light inc qty">
                         +
                     </a>
@@ -71,7 +71,7 @@
             {% if mug.on_sale == True %}
             <div class="col s12">
                 <button
-                class="btn waves-effect waves-light full-width"
+                class="btn waves-effect waves-light full-width center"
                 type="submit"
                 name="action"
                 >
@@ -85,7 +85,7 @@
             </div>
             {% endif %}
             <div class="col s12">
-                <a href="{% url 'mugs' %}" class="waves-effect waves-light btn full-width">Keep Shopping</a>
+                <a href="{% url 'mugs' %}" class="waves-effect waves-light btn full-width center">Keep Shopping</a>
             </div>
         </div>
         <input type="hidden" name="redirect_url" value="{{ request.path }}">

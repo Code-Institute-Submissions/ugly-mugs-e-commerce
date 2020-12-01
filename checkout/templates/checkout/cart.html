@@ -58,13 +58,13 @@
                 </div>
                 <div class="col s12 cart-qty">
                     <div class="col s4 center">
-                        <a href="{% url 'remove_from_cart' item.item_id %}" class="btn waves-effect waves-light"><i class="material-icons medium">delete</i></a>
+                        <a href="{% url 'remove_from_cart' item.item_id %}" class="btn waves-effect waves-light"><i class="material-icons medium white-icon">delete</i></a>
                     </div>
                     <div class="col s4 center">
                     <p class="mug-price">${{ item.mug.price | calc_subtotal:item.quantity }}</p>
                     </div>
                     <div class="col s4 center">
-                        <button type="submit" name="action" class="btn waves-effect waves-light"><i class="material-icons">sync</i></button>
+                        <button type="submit" name="action" class="btn waves-effect waves-light"><i class="material-icons white-icon">sync</i></button>
                     </div>
                 </div>
             </form>

@@ -16,6 +16,10 @@
     color: #40bfff !important;
 }
 
+.white-icon {
+    color: #fff !important;
+}
+
 /* ------------------------------- Special paddings/margins/text */
 
 html {
@@ -341,6 +345,10 @@ select {
 
 /* ------------------------------- Quantity box */
 
+.qty {
+    height: 100% !important;
+}
+
 .qty-box {
     display: flex;
     align-items: center;
@@ -349,6 +357,19 @@ select {
 .qty-div-dec {
     display: flex;
     justify-content: flex-end;
+    height: 3rem;
+}
+
+.qty-div-inc {
+    display: flex;
+    justify-content: flex-start;
+    height: 3rem;
+}
+
+input.qty-input {
+    padding-left: 0.5rem !important;
+    margin: 0px !important;
+    max-width: 5.5rem;
 }
 
 /* ------------------------------- Cart */
@@ -411,7 +432,7 @@ select {
     padding-bottom: 0.75rem !important;
 }
 
-/* ------------------------------- Loading Spinner */
+/* ------------------------------- Loading Overlay */
 
 #loading-overlay {
 	display: none;
@@ -420,16 +441,14 @@ select {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(202, 203, 212, 0.8);
-    z-index: 9999;
-}
-
-.loading-spinner {
-	display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    height: 100%;
+    background-color:#ef2a82;
+    background-image:url('/media/ajax-loader.gif');
+    background-size: 50px;
+    background-repeat:no-repeat;
+    background-position:center;
+    z-index:10000000;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
 }
 
 /* ------------------------------- Media Queries */
