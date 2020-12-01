@@ -80,82 +80,11 @@ The footer provides further navigation links for a better user experience.
 
 ---
 
-### Database structure
-
-Users: https://www.webforefront.com/django/setupdjangousers.html#django-user-system
-
-There are 4 collection in the database:
-
-- users:
-
-```
-{
-  "_id":                   <ObjectId>,
-  "first_name":            <string>,
-  "last_name":             <string>,
-  "email":                 <string>,
-  "phone":                 <string>,
-  "city":                  <string>,
-  "country":               <string>,
-  "password":              <Binary>
-}
-```
-
-- Briefs:
-
-```
-{
-  "_id":                   <ObjectId>,
-  "first_name":            <string>,
-  "last_name":             <string>,
-  "city":                  <string>,
-  "country":               <string>,
-  "company_name":          <string>,
-  "title":                 <string>,
-  "hours":                 <string>,
-  "duration":              <string>,
-  "required_skills":       <string>,
-  "budget":                <string>,
-  "project_start":         <string>,
-  "description":           <string>,
-  "action":                <string>,
-  "email":                 <string>
-}
-```
-
-- Creatives:
-
-```
-{
-  "_id":                   <ObjectId>,
-  "first_name":            <string>,
-  "last_name":             <string>,
-  "city":                  <string>,
-  "country":               <string>,
-  "skills":                <string>,
-  "hourly_rate":           <string>,
-  "description":           <string>,
-  "action":                <string>,
-  "email":                 <string>
-}
-```
-
-- Skills:
-
-```
-{
-  "_id":                   <ObjectId>,
-  "skill_name":            <string>
-}
-```
-
----
-
 ### User Stories
 
-You can access the deployed project [here](https://creative-hub.herokuapp.com/) to try the user stories yourself.
+You can access the deployed project [here](https://ugly-mugs.herokuapp.com/ "Ugly Mugs") to try the user stories yourself.
 
-- As a shopper I want to be able to view a list of mugs si that I can select some to purchase
+- As a shopper I want to be able to view a list of mugs so that I can select some to purchase
 - As a shopper I want to be able to view individual mug details so that I can get the details I wan
 - As a shopper I want to be able to easily navigate on the site  so that I can find what I need
 - As a shopper I want to be able to easily select the quantity of a mug when purchasing it so that I can ensure I don't accidentaly select the wrong mug or quantity
@@ -221,20 +150,22 @@ It uses minimal but powerful design to interact with the user in a consistent, p
 
 ### Skeleton
 
-In this [link](https://github.com/robinwesterback/creative-hub/tree/master/wireframes) you can find the wireframes for each section that serves as the skeleton for the project.
+In this [link](https://github.com/robinwesterback/ugly-mugs-e-commerce/tree/master/wireframes "Wireframes") you can find the wireframes for each section that serves as the skeleton for the project.
 
 ---
 
 ### Surface
 
-In this [link]() you can find the mockups for the website created with [figma]().
+In this [link]() you can find the mockups for the website created with [figma](https://github.com/robinwesterback/ugly-mugs-e-commerce/tree/master/mockups).
 
 #### Fonts
-I used from SF Pro Text and SF Pro Display [Google Fonts]():
+I used Poppins from [Google Fonts](https://fonts.google.com/ "Google Fonts").
 
 #### Colors
-- #111111 - font Colors
-- #222222 - background Colors
+- Black
+- White
+- #EF2A82 - Pink
+- #40BFFF - blue
 
 [Back to Top](#uglymugs.com)
 ***
@@ -295,10 +226,6 @@ The application provides a checkout solution using [Stripe](https://stripe.com/e
 
 The application communicates with the user notifying what's going on using [toasts](https://materializecss.com/toasts.html "Toasts") and [messages](https://docs.djangoproject.com/en/3.1/ref/contrib/messages/#using-messages-in-views-and-templates "Django messages").
 
-#### Pagination
-
-The application provides [pagination](https://materializecss.com/pagination.html "Pagination") to the website clean.
-
 #### Add mugs
 
 The application allows the store owner to add mugs to the db.
@@ -334,6 +261,10 @@ Continue to improve the defensive design to keep the website safe for shoppers a
 #### Livechat and chat function
 
 I might add a livechat for contacting the store.
+
+#### Finish up styling and Functions
+
+As you might have noticed I didn't manage to finish everything in time for submission, the site is going to get polished and look good on all devices.
 
 #### Your thoughts
 
@@ -398,27 +329,43 @@ Functions like links, CRUD operations and contact forms should work properly e.g
 
 ---
 
-### Functionality
+- As a shopper I want to be able to view a list of mugs so that I can select some to purchase
+- As a shopper I want to be able to view individual mug details so that I can get the details I wan
+- As a shopper I want to be able to easily navigate on the site so that I can find what I need
+- As a shopper I want to be able to easily select the quantity of a mug when purchasing it so that I can ensure I don't accidentaly select the wrong mug or quantity
+- As a shopper I want to be able to view items in my bag to be purchased so that I can identify the total cost of my purchase and all items I will receive
+- As a shopper I want to be able to adjust the quantity of individual items in my bag so that I can easily make changes to my purchase before checkout.
+- As a shopper I want to be able to easily enter my payment information so that I can check out quickly and with no hassles
+- As a shopper I want to be able to feel my personal and payment information is safe and secure so that I can confidently provide the needed information to make a purchase
+- As a shopper I want to be able to view an order confirmation after checkout so that I can verify that I haven't made any mistakes
 
-| Description                                    |                   Expected outcome                   | Pass | Comments |
-| ---------------------------------------------- | :--------------------------------------------------: | ---: | -------: |
-| Input 50 letters in campaign_name              |               Max input of 30 letters                |  Yes |        - |
-| Post a form without filling in required fields | Shouldn't work, both backend and frontend validation |  Yes |        - |
-| Log in with an e-mail that is not registered   |      Shouldn't work, error message should show       |  Yes |        - |
-| Send an empty contact form                     |         Shouldn't work, fields are required          |  Yes |        - |
+- As a user I want to be able to easily register for an account so that I can have a personal account and be able to view my profile
+- As a user I want to be able to easily login and logout so that I can access my personal account information
+- As a user I want to be able to easily recover my password in case I forget it so that I can recover access to my account
+- As a user I want to be able to receive an email confirmation after registering so that I can verify that my account registration was successful
+- As a user I want to be able to have a personalized user profile so that I can view my personal order history and save my payment information
 
----
+- As a store owner I want to be able to add a mug so that I can add new items to my store
+- As a store owner I want to be able to edit/update a mug so that I can change mug prices, descriptions and other mug criteria
+- As a store owner I want to be able to delete a mug so that I can remove items that are no longer for sale
 
 ### User Stories
 
 | Description                                    |                Expected outcome                 | Pass | Comments |
 | ---------------------------------------------- | :---------------------------------------------: | ---: | -------: |
-| Click on a navigation link                     | Get navigated towards the desired link location |  Yes |        - |
-| Create user account                            |              User account created               |  Yes |        - |
-| Create a user account with a registered e-mail |  It doesn't work and an error-message pops up   |  Yes |        - |
-| Delete a creative ad                           |               Creative ad deleted               |  Yes |        - |
-| Edit and update brief                          |            Brief edited and updated             |  Yes |        - |
-| Send a message from the contact form           |                Message gets sent                |  Yes |        - |
+| View a list of mugs | The collection template renders |  Yes |        - |
+| View individual mug details | The mug details template renders |  Yes |        - |
+| Easily navigate on the site | Navigation links are visible and clickable |  Yes |        - |
+| Easily select the quantity of a mug | Quantity adjusts |  Yes |        - |
+| View items in my bag  | See items in bag |  Yes |        - |
+| Adjust the quantity of individual items in my bag | Quantity adjusted |  Yes |        - |
+| Check out quickly and with no hassles | The checkout succeeds |  Yes |        - |
+| View an order confirmation after checkout | See order confirmation |  Yes |        - |
+| Register for an account | Account registered |  Yes |        - |
+| Login and logout | Login and logout works |  Yes |        - |
+| Recover my password | Password recovered |  Yes |        - |
+| A personalized user profile | The profile template renders |  Yes |        - |
+| As a store owner I want to be able to add/edit/update/delete a mug | Staff status and links to backend renders for users with staff status |  Yes |        - |
 
 ---
 
@@ -444,9 +391,7 @@ Functions like links, CRUD operations and contact forms should work properly e.g
 
 ### Responsiveness
 
-I have tested the responsiveness of the application [here](http://ami.responsivedesign.is/# "Am I Responsive?") and it is responsive.
-
-![alt text](src/assets/images/responsive-app.jpg "I am responsive!")
+The site is not fully responsible yet, almost though. Need to finish up the CSS.
 
 ---
 
@@ -455,7 +400,7 @@ I have tested the responsiveness of the application [here](http://ami.responsive
 #### CSS
 
 I validated my CSS with the [Jigsaw W3C Validation Service](https://jigsaw.w3.org/css-validator/ "CSS Validation").
-1 error was located related to materialize. As the application works as intended it's nothing to be concerned about.
+1 error was located related to materialize or django. As the application works as intended it's nothing to be concerned about.
 Therefore I choose to leave it for now even though jigsaw regards the CSS as an error.
 
 #### HTML
@@ -474,24 +419,13 @@ such as confirmation before deleting a creative ad/brief or adding interactive q
 
 ---
 
-### Bugs discovered
-
-#### Solved bugs
-
-1. Bug#1
-    - Description of bug
-    - Solution for bug
-
----
-
 ### Conclusion
 
-After testing the deployed application my overall conclusion is that the application is working as intended.
+After testing the deployed application my overall conclusion is that the application is working as intended apart from the CSS.
 It has a lot of potential to provide even more value for the user with future installations of the application.
 The javascript and python works as intended.
-The minor flaws that exist don’t ruin the user experience but should be corrected in the future.
 
-[Back to Top](#megapixel-groups-ugly-mugs)
+[Back to Top](#uglymugs.com)
 ***
 
 ## Deployment
@@ -522,26 +456,69 @@ This project is stored in a GitHub repository and hosted on Heroku.
 
 ---
 
-### How I deployed the project on Heroku
+### How I deployed the project on Heroku/AWS S3
 
-1. Create a new application using the Heroku dashboard.
+Here is a summary of deployment. Deploying Django Projects to Heroku/AWS S3
 
-2. Go to settings tab, click on 'reveal config vars' and add config vars such as IP (0.0.0.0), PORT (5000), MongoDB Name, MongoDB URI (URL with DB name and password).
-Add settings accordingly to settings.py.
+ugly-mugs-app
+1. requirements.txt
+2. Procfile
+3. DB Connection
+4. S3 Connection
+5. Environment Variables
+6. Github
 
-3. Postgres on Heroku and install [gunicorn]( ""), [dj-database-url]( ""), and [psycopg2-binary]( "") 
+Heroku
+1. Database
+2. Config Vars (Environment Variables)
+3. Deploy (Github)
 
-4. Log into Heroku via the console using 'heroku login' and follow the on screen instructions to log in.
+AWS
+1. S3 Buckets
+2. IAM (Security)
 
-5. Create a requirements.txt via the console using 'pip3 freeze > requirements.txt'.
-
-6. Create a Procfile via the console using 'echo web: python app.py > Procfile'.
-
-7. Connect GitHub to Heroku via the console using 'heroku git:remote a ugly-mugs'
-
-8. Commit all files in your project via the console using 'git add .' and 'git commit -m "Message"'.
-
-9. Deploy your project to Heroku via the consol using 'git push heroku master'.
+We can use either MySQL or Postgres DB on Heroku.
+I used Postgres for this project.
+1. Create a Heroku Personal Project
+    1. Optionally enter a project name. Must be unique accross heroku. Perhaps prefix with name or website e.g. niels-ecommerce
+    2. Choose 'Europe' as Runtime Selection
+    3. Select 'Resources' and under 'Add-ons' enter postgres, and select Heroku Postgres. Provision a hobby (free) database.
+    4. Click on Settings, Reveal Config Vars and note that there is now a DATABASE_URL setting.
+2. Modify App to Connect to Heroku DB instead of local
+    1. sudo pip3 install dj-database-url
+    2. sudo pip3 install psycopg2
+    3. sudo pip3 freeze --local > requirements.txt
+    4. In settings.py import dj_database_url
+    5. Change the existing DB connection in settings.py to use a URL. Comment out the following:
+    `
+    DATABASES = {
+        'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+    `
+    Replace with this.
+    `
+    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL')) }
+    `
+    6. Create a file called env.py in the project folder (Same folder as settings.py). Add the DATABASE_URL and SECRET_KEY variables as follows.
+    `
+    import os
+    os.environ.setdefault("SECRET_KEY", "<KEY HERE>")
+    os.environ.setdefault("DATABASE_URL", "<DB URL HERE>")
+    `
+    7. python3 manage.py makemigrations 
+       python3 manage.py migrate
+    8. python3 manage.py createsuperuser
+3. Get Project Ready to run on Heroku
+    1. Create Procfile(s). One file called Procfile (Upper case P, no file extension) 
+    `
+    web: gunicorn projectfolder.wsgi:application
+    `
+    projectfolder above is the name of the project file that we want to run.
+    2. sudo pip3 install gunicorn`
+    3. pip3 freeze --local > requirements.txt
 
 ---
 
@@ -569,25 +546,15 @@ Add settings accordingly to settings.py.
 ### Content
 
 All content on the application was written by me.
-The design was inspired by [Materialize](https://materializecss.com/ "Materialize").
 
 ---
 
 ### Media
 
-The favicon used for this project was delivered by [Megapixel Group](https://www.megapixel.group/ "Megapixel Group").
 The Icons used for this project was from [Materialize](https://materializecss.com/ "Materialize").
+The images used were found on [Unsplash](https://unsplash.com/ "Unsplash")
 
 ---
-
-### Code
-
-- Code borrowed
-- Code borrowed
-- Code borrowed
-
----
-
 
 ### Acknowledgements
 
@@ -595,9 +562,3 @@ Big thanks to my mentor who provided me with tips, support and helpful resources
 
 [Back to Top](#uglymugs.com)
 ***
-
-## Resources
-
-Below is a list of the resources used to create this project:
-
-- [Materialize](https://materializecss.com/ "Materialize")

@@ -653,3 +653,9 @@ input.qty-input {
         margin: 0px 7.5% !important;
     }
 }
+
+@media screen and (min-width: 1280px) {
+    .mug-of-the-month {
+        height: 90rem;
+    }
+}
