@@ -40,7 +40,7 @@
     </div>
 </div>
 <hr>
-<div class="row">
+<div class="row padding">
 	<div class="col s7">
 		<p>Order Total:</p>
 		<p>Delivery:</p>
@@ -52,7 +52,7 @@
 		<p class="mug-price">{{ grand_total | floatformat:2 }}</p>
 	</div>
 </div>
-<div class="row">
+<div class="row padding">
     <div class="col s12">
 		<p>Please fill out the form below to complete your order</p>
 		<form class="col s12" id="payment-form" action="{% url 'checkout' %}" method="POST">
@@ -79,7 +79,7 @@
             
             {% if user.is_authenticated %}
             
-            <div class="rowr">
+            <div class="row">
                 <input class="checkbox-input" type="checkbox" id="id-save-info" name="save-info" checked="checked">
                 <label for="id-save-info right ">This delivery information will be saved to your profile</label>
             </div>
@@ -108,7 +108,7 @@
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </div>
             </div>
-            <button class="btn waves-effect waves-light full-width" id="submit-button" type="submit" name="action">Complete Order</button>                
+            <button class="btn waves-effect waves-light full-width side-btn" id="submit-button" type="submit" name="action">Complete Order</button>                
             <a class="waves-effect waves-light btn full-width" href="{% url 'view_cart' %}">Adjust Cart</a>
             <p class="gray">Your card will be charged ${{ grand_total|floatformat:2}}</p>
 		</form>

@@ -378,6 +378,7 @@ Are there any features that you would like me to implement to improve the applic
 - [Balsamiq](https://balsamiq.com/ "Balsamiq") for creating wireframes
 - [Figma](https://www.figma.com/ "Figma") for creating mockups
 - [AWS S3 Bucket](https://aws.amazon.com/s3/ "AWS S3 Bucket") as a cloud storage
+- [Ajax Gif Loader](http://www.ajaxload.info/ "Ajax Gif Loader") for creating a loading indicator
 
 ---
 

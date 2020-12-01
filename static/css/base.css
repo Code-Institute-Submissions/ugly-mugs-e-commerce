@@ -72,6 +72,10 @@ i {
     padding: 0px !important;
 }
 
+.border-bottom {
+    border-bottom: 1px solid #9098b1;
+}
+
 .full-width {
     width: 100%;
     margin: 0.5rem 0px;
@@ -352,6 +356,7 @@ select {
 .qty-box {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .qty-div-dec {
@@ -364,6 +369,7 @@ select {
     display: flex;
     justify-content: flex-start;
     height: 3rem;
+    margin-left: 0.5rem;
 }
 
 input.qty-input {
@@ -402,7 +408,6 @@ input.qty-input {
 .cart-qty > div > input.qty-input {
     margin: 0rem 0px 0px 0px !important;
     padding-left: 0.5rem !important;
-    width: auto;
 }
 
 /* ------------------------------- Allauth */
@@ -422,6 +427,16 @@ input.qty-input {
 .ctrlHolder {
     display: flex;
     align-items: center;
+}
+
+#div_id_remember {
+    display: none !important;
+}
+
+/* ------------------------------- Toasts */
+
+.toast-action {
+    color: #40bfff !important;
 }
 
 /* ------------------------------- Footer */
@@ -453,12 +468,188 @@ input.qty-input {
 
 /* ------------------------------- Media Queries */
 
-@media screen and (min-width: 1024px) {
-    main {
-        padding: 0px 10%;
+@media screen and (min-height: 700px) {
+    .content-section {
+        min-height: 30rem !important;
     }
 
-    footer {
-        margin: 0px 10% !important;
+    .content-row {
+        min-height: 45rem !important;
+    }
+
+@media screen and (min-width: 768px) {
+    .padding {
+        padding: 0px 10% !important;
+    }
+
+    main {
+        font-size: 2rem !important;
+    }
+
+    nav .brand-logo {
+        font-size: 2.5rem !important;
+        left: 2rem !important;
+    }
+
+    header i {
+        font-size: 2.5rem !important;
+        margin-right: 1rem !important;
+    }
+
+    .sidenav > li {
+        padding: 1rem !important;
+    }
+
+    .sidenav li>a {
+        font-size: 2rem !important;
+    }
+
+    .content-section {
+        min-height: 30rem !important;
+    }
+
+    .content-row {
+        min-height: 60rem !important;
+    }
+
+    .content-item {
+        font-size: 2rem;
+    }
+
+    .mug-name {
+        font-size: 1.5rem;
+    }
+
+    .mug-info {
+        font-size: 1.2rem;
+    }
+
+    .card-title {
+        font-size: 4rem !important;
+    }
+
+    button {
+        max-width: 20rem !important;
+        font-size: 2rem !important;
+    }
+    
+    a.full-width {
+        max-width: 20rem !important;
+        font-size: 2rem !important;
+    }
+
+    h4 {
+    font-size: 2.5rem !important;
+    }
+
+    .qty-input {
+        width: 5rem !important;
+        height: 4.5rem !important;
+        font-size: 2rem !important;
+    }
+
+    .qty,
+    .qty-div-inc,
+    .qty-div-dec {
+        font-size: 4rem !important;
+        height: 4.5rem !important;
+        display: flex !important;
+        align-items: center !important;
+        margin-left: 0rem;
+    }
+
+    button,
+    a.btn {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        min-height: 4.5rem !important;
+        min-width: 4.5rem !important;
+    }
+
+    .white-icon {
+        font-size: 3rem !important;
+    }
+
+    .update-qty {
+        width: 100% !important;
+        margin-left: 1rem;
+    }
+
+    .delete-item {
+        margin-right: 1rem;
+    }
+
+    #payment-form {
+        padding: 0px 10% !important;
+    }
+
+    input,
+    select,
+    label {
+        height: 5rem !important;
+        font-size: 2rem !important;
+    }
+
+    form i {
+        font-size: 4rem !important;
+    }
+
+    .display-center {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    header {
+        height: 7rem;
+    }
+
+    nav a {
+        font-size: 1.3rem !important
+    }
+    
+    a.btn {
+        max-width: 25rem !important;
+    }
+
+    .index a {
+        margin-left: 30%;
+        font-size: 2rem;
+    }
+
+    .mug-of-the-month {
+        margin-top: 7.5rem;
+        height: 80rem;
+    }
+
+    .mug-of-the-month a {
+        margin-left: 33%;
+        font-size: 2rem;
+    }
+
+    .campaign-title {
+        font-size: 2.5rem;
+    }
+
+    .campaign-name h2 {
+        font-size: 3.5rem !important;
+        margin: 1rem 0 50rem 0;
+    }
+
+    .campaign-price {
+        font-weight: 700;
+        font-size: 2.5rem;
+    }
+
+    .content-row {
+        min-height: 70rem !important;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    main {
+        margin: 0px 7.5% !important;
     }
 }

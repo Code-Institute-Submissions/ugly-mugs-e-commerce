@@ -7,8 +7,8 @@
 
 {% block content %}
 
-<div class="row no-margin">
-    <div class="col s12">
+<div class="row">
+    <div class="col s12 m6">
         {% if mug.image %}
         <div class="card">
             <div class="card-image">
@@ -27,9 +27,7 @@
         </div>
         {% endif %}
     </div>
-</div>
-<div class="row">
-    <div class="col s12">
+    <div class="col s12 m6">
         <p class="mug-name">{{ mug.name }}</p>
         <p class="mug-price">{{ mug.price }}</p>
         <p class="mug-info">{{ mug.description }}</p>
@@ -38,17 +36,19 @@
     
   <!-- Materialize Form - Add to Cart -->
 
+
 <div class="row">
+    {% if mug.on_sale == True %}
     <form class="col s12" action="{% url 'add_to_cart' mug.id %} " method="POST">
         {% csrf_token %}
         <div class="row">
-            <div class="input-field col s12 qty-box">
-                <div class="col s4 qty-div-dec no-padding">
+            <div class="input-field col s12 m6 offset-m6 qty-box">
+                <div class="col qty-div-dec no-padding">
                     <a class=" btn waves-effect waves-light dec qty">
                         -
                     </a>
                 </div>
-                <div class="col s4 center no-padding">
+                <div class="col center no-padding">
                     <input
                     id="quantity"
                     type="number"
@@ -62,34 +62,34 @@
                     />
                     <label for="quantity"></label>
                 </div>
-                <div class="col s4 qty-div-inc no-padding">
+                <div class="col qty-div-inc no-padding">
                     <a class=" btn waves-effect waves-light inc qty">
                         +
                     </a>
                 </div>
             </div>
-            {% if mug.on_sale == True %}
-            <div class="col s12">
-                <button
-                class="btn waves-effect waves-light full-width center"
-                type="submit"
-                name="action"
-                >
-                Add to Cart
-                <i class="material-icons right">add_shopping_cart</i>
-                </button>
-            </div>
-            {% else %}
-            <div class="col s12">
-                <p>The Ugly Mug is out of stock. A new limited edition Ugly Mug will be released by the new month.</p>
-            </div>
-            {% endif %}
-            <div class="col s12">
-                <a href="{% url 'mugs' %}" class="waves-effect waves-light btn full-width center">Keep Shopping</a>
+            <div class="row">
+                <div class="col s12 m6 offset-m6 display-center">
+                    <button
+                    class="btn waves-effect waves-light full-width center"
+                    type="submit"
+                    name="action"
+                    >
+                    Add to Cart
+                    </button>
+                </div>
+                <div class="col s12 m6 offset-m6 display-center">
+                    <a href="{% url 'mugs' %}" class="waves-effect waves-light btn full-width center">Keep Shopping</a>
+                </div>
             </div>
         </div>
         <input type="hidden" name="redirect_url" value="{{ request.path }}">
     </form>
+    {% else %}
+    <div class="col s12">
+        <p>The Ugly Mug is out of stock. A new limited edition Ugly Mug will be released by the new month.</p>
+    </div>
+    {% endif %}
 </div>
 
 {% endblock %}

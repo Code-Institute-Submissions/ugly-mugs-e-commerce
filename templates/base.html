@@ -67,7 +67,7 @@
 					
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li><a href="{% url 'about' %}">ABOUT</a></li>
-						<li><a href="{% url 'mugs' %}">THE COLLECTION</a></li>
+						<li><a href="{% url 'mugs' %}">COLLECTION</a></li>
 						<li><a href="{% url 'contact' %}">CONTACT</a></li>
 						{% if request.user.is_authenticated %}
 						<li><a href="{% url 'profile' %}">MY PROFILE</a></li>
@@ -86,7 +86,7 @@
 			<ul class="sidenav" id="mobile-demo">
                 <li><a href="{% url 'home' %}">HOME</a></li>
 				<li><a href="{% url 'about' %}">ABOUT</a></li>
-				<li><a href="{% url 'mugs' %}">THE COLLECTION</a></li>
+				<li><a href="{% url 'mugs' %}">COLLECTION</a></li>
 				<li><a href="{% url 'contact' %}">CONTACT</a></li>
 				{% if request.user.is_authenticated %}
 				<li><a href="{% url 'profile' %}">MY PROFILE</a></li>
