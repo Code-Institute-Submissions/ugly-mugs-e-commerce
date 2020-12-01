@@ -12,24 +12,31 @@
 <div class="row">
     <div class="col s12">
         <p>Order Summary ({{ mug_count }})</p>
-        <ul class="collection">
         {% for item in cart_items %}
-            <li class="collection-item avatar">
-                <a href="{% url 'mug_detail' item.mug.id %}">
-                    {% if item.mug.image %}
-                    <img src="{{ item.mug.image.url }}" alt="{{ mug.name }}" class="circle">
-                    {% else %}
-                    <img src="{{ MEDIA_URL }}my-ugly-mug.jpg" alt="{{ mug.name }}" class="circle">
-                    {% endif %}
-                </a>
-                <span class="title">{{ item.mug.name }}</span>
-                <p>${{ item.quantity }} <br>
-                   ${{ item.mug.price | calc_subtotal:item.quantity }}
-                </p>
-                <p>${{ item.mug.price | calc_subtotal:item.quantity }}</p>
-            </li>
-            {% endfor %}
-        </ul>
+        <div class="row z-depth-3 cart-item">
+            <div class="col s12">
+                <div class="col s12 item-container">
+                    <div class="col s6">
+                        <a href="{% url 'mug_detail' item.mug.id %}">
+                            {% if item.mug.image %}
+                            <img src="{{ item.mug.image.url }}" alt="{{ item.mug.name }}" class="item-img">
+                            {% else %}
+                            <img src="{{ MEDIA_URL }}my-ugly-mug.jpg" alt="{{ mug.name }}" class="circle">
+                            {% endif %}
+                        </a>
+                    </div>
+                    <div class="col s6 center">
+                        <span class="title">{{ item.mug.name }}</span>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <p>Quantity: {{ item.quantity }}</p>
+                    <p>Mug price: ${{ item.mug.price | calc_subtotal:item.quantity }}</p>
+                    <p><strong>Grand Total: ${{ item.mug.price | calc_subtotal:item.quantity }}</strong></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 </div>
 <hr>
@@ -37,12 +44,12 @@
 	<div class="col s7">
 		<p>Order Total:</p>
 		<p>Delivery:</p>
-		<p>Grand Total:</p>
+		<p class="mug-price">Grand Total:</p>
 	</div>
 	<div class="col s3">
 		<p>{{ total | floatformat:2 }}</p>
 		<p>{{ delivery | floatformat:2 }}</p>
-		<p>{{ grand_total | floatformat:2 }}</p>
+		<p class="mug-price">{{ grand_total | floatformat:2 }}</p>
 	</div>
 </div>
 <div class="row">
@@ -72,13 +79,9 @@
             
             {% if user.is_authenticated %}
             
-            <div class="row">
-                <div class="col s2">
-                    <input type="checkbox" id="id-save-info" name="save-info" checked="checked">
-                </div>
-                <div class="col s10">
-                    <label for="id-save-info right ">Save this delivery information to my profile</label>
-                </div>
+            <div class="rowr">
+                <input class="checkbox-input" type="checkbox" id="id-save-info" name="save-info" checked="checked">
+                <label for="id-save-info right ">This delivery information will be saved to your profile</label>
             </div>
             {% else %}
             <div class="row">
@@ -104,11 +107,9 @@
                     <!-- Pass the client secret to the view so we can get the payment intent id -->
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </div>
-            </div>                
+            </div>
+            <button class="btn waves-effect waves-light full-width" id="submit-button" type="submit" name="action">Complete Order</button>                
             <a class="waves-effect waves-light btn full-width" href="{% url 'view_cart' %}">Adjust Cart</a>
-            <button class="btn waves-effect waves-light full-width" id="submit-button" type="submit" name="action">Complete Order
-                <i class="material-icons right">send</i>
-            </button>
             <p class="gray">Your card will be charged ${{ grand_total|floatformat:2}}</p>
 		</form>
     </div>

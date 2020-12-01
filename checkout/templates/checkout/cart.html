@@ -11,60 +11,79 @@
 </div>
 
 {% if cart_items %}
-<div class="row">
+{% for item in cart_items %}
+<div class="row z-depth-3 cart-item">
     <div class="col s12">
-        <ul class="collection">
-        {% for item in cart_items %}
-            <li class="collection-item avatar">
-                <div class="col s12 m4">
-                    <img src="{{ item.mug.image.url }}" alt="" class="circle">
-                    <span class="title">{{ item.mug.name }}</span>
-                    <p>${{ item.mug.price }} <br>
-                        Second Line
-                    </p>
-                </div>
-                <div class="col s12 m4">
-                    <form class="update-form" method="POST" action="{% url 'adjust_cart' item.item_id %}">
-                        {% csrf_token %}
-                        <div class="row">
-                            <div class="input-field col">
+        <div class="col s12 item-container">
+            <div class="col s6">
+                <img src="{{ item.mug.image.url }}" alt="{{ item.mug.name }}" class="item-img">
+            </div>
+            <div class="col s6 center">
+                <span class="title">{{ item.mug.name }}</span>
+                <p class="mug-price">${{ item.mug.price }}</p>
+            </div>
+        </div>
+        <div class="col s12">
+            <form class="update-form" method="POST" action="{% url 'adjust_cart' item.item_id %}">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col s12">
+                        <div class="input-field col s12 qty-box cart-qty">
+                            <div class="col s4 qty-div-dec">
+                                <a class=" btn waves-effect waves-light dec qty">
+                                    -
+                                </a>
+                            </div>
+                        <div class="col s4 center">
                                 <input
+                                id="quantity"
                                 type="number"
                                 name="quantity"
                                 value="{{ item.quantity }}"
                                 min="1"
                                 max="99"
-                                data-item_id="{{ item.item_id }}"
-                                id="id_qty_{{ item.item_id }}"
-                                class="validate"
+                                data-item_id="{{ mug.id }}"
+                                id="id_qty_{{ mug.id }}"
+                                class="validate qty-input"
                                 />
-                                <label for="quantity">Quantity</label>
+                                <label for="quantity"></label>
+                            </div>
+                            <div class="col s4">
+                                <a class=" btn waves-effect waves-light inc qty">
+                                    +
+                                </a>
                             </div>
                         </div>
-                        <button type="submit" name="action" class="btn waves-effect waves-light">Update</button>
-                        <a href="{% url 'remove_from_cart' item.item_id %}" class="btn waves-effect waves-light">Remove</a>
-                    </form>
+                    </div>
                 </div>
-                <div class="col s12 m4">
-                    <p>${{ item.mug.price | calc_subtotal:item.quantity }}</p>
+                <div class="col s12 cart-qty">
+                    <div class="col s4 center">
+                        <a href="{% url 'remove_from_cart' item.item_id %}" class="btn waves-effect waves-light"><i class="material-icons medium">delete</i></a>
+                    </div>
+                    <div class="col s4 center">
+                    <p class="mug-price">${{ item.mug.price | calc_subtotal:item.quantity }}</p>
+                    </div>
+                    <div class="col s4 center">
+                        <button type="submit" name="action" class="btn waves-effect waves-light"><i class="material-icons">sync</i></button>
+                    </div>
                 </div>
-            </li>
-            {% endfor %}
-        </ul>
+            </form>
+        </div>
     </div>
 </div>
+{% endfor %}
 <div class="row">
     <div class="col s12">
-        <p>Cart Total: ${{ total|floatformat:2 }}</p>
-        <p>Delivery: ${{ delivery|floatformat:2 }}</p>
-        <p>Grand Total: ${{ grand_total|floatformat:2 }}</p>
+        <p><strong>Total: ${{ total|floatformat:2 }}</strong></p>
+        <p><strong>Delivery: ${{ delivery|floatformat:2 }}</strong></p>
+        <p class="mug-price">Grand Total: ${{ grand_total|floatformat:2 }}</p>
         {% if free_delivery_delta > 0 %}
         <p>You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!</p>
         {% endif %}
     </div>
     <div class="col s12">
+        <a href="{% url 'checkout' %}" class="waves-effect waves-light btn full-width">Secure Checkout</a>
         <a href="{% url 'mugs' %}" class="waves-effect waves-light btn full-width">Keep Shopping</a>
-        <a href="{% url 'checkout' %}" class="waves-effect waves-light btn full-width"><i class="material-icons">lock</i>Secure Checkout</a>
     </div>
 </div>
 {% else %}
@@ -78,4 +97,9 @@
 </div>
 {% endif %}
 
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script src="{% static 'js/quantity_form.js' %}"></script>
 {% endblock %}

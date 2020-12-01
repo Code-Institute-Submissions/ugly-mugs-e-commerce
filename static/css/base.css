@@ -13,7 +13,7 @@
 }
 
 .ugly-blue {
-    color: 40bfff !important;
+    color: #40bfff !important;
 }
 
 /* ------------------------------- Special paddings/margins/text */
@@ -48,6 +48,10 @@ a {
 
 strong {
     font-weight: 700 !important;
+}
+
+i {
+    color: #ef2a82 !important
 }
 
 /* ------------------------------- Classes */
@@ -195,6 +199,10 @@ header {
     padding-top: 1rem;
 }
 
+header i {
+    color: #0f0f10 !important
+}
+
 nav {
     height: 5rem !important;
     background-color: #fff !important;
@@ -297,8 +305,9 @@ span.badge.new {
 
 /* ------------------------------- Forms */
 
-input {
-    padding: 0px 0.5rem;
+input,
+select {
+    padding: 0px 0px 0px 0.5rem !important;
     border: 1px solid #bbbbbb !important;
     border-radius: 5px !important;
     -webkit-box-shadow: 0 1px 0 0 #bbbbbb !important;
@@ -308,7 +317,9 @@ input {
 }
 
 input:focus,
-input:active {
+input:active,
+select:focus,
+select:active {
     border: 1px solid #ef2a82 !important;
     border-radius: 5px !important;
     -webkit-box-shadow: 0 1px 0 0 #ef2a82 !important;
@@ -324,6 +335,10 @@ select {
     border-bottom: none !important;
 }
 
+.checkbox-input {
+    display: none !important;
+}
+
 /* ------------------------------- Quantity box */
 
 .qty-box {
@@ -331,24 +346,42 @@ select {
     align-items: center;
 }
 
-.qty {
-
-}
-
 .qty-div-dec {
     display: flex;
     justify-content: flex-end;
 }
 
-.qty-input {
-    margin: 0.35rem 0px 0px 0px !important;
+/* ------------------------------- Cart */
+
+.item-container {
+    padding-top: 1rem !important;
+}
+
+.item-img {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.cart-item {
+    padding-bottom: 1rem !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+    border-radius: 1rem !important;
+}
+
+.cart-qty {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.cart-qty .col {
+    padding: 0px !important;
+}
+
+.cart-qty > div > input.qty-input {
+    margin: 0rem 0px 0px 0px !important;
+    padding-left: 0.5rem !important;
     width: auto;
-}
-
-.dec {
-}
-
-.inc {
 }
 
 /* ------------------------------- Allauth */

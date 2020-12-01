@@ -17,6 +17,7 @@ $(document).ready(function() {
     $( "div[id='div_id_default_town_or_city']" ).addClass('location-icon');
     $( "div[id='div_id_default_county']" ).addClass('location-icon');
     $( "div[id='div_id_default_postcode']" ).addClass('location-icon');
+    $( "div[id='div_id_default_country']" ).addClass('country-icon');
 
     // Append classes to input fields in stripe
     $( "div[id='div_id_full_name']" ).addClass('account-icon');
@@ -26,6 +27,7 @@ $(document).ready(function() {
     $( "div[id='div_id_town_or_city']" ).addClass('location-icon');
     $( "div[id='div_id_county']" ).addClass('location-icon');
     $( "div[id='div_id_postcode']" ).addClass('location-icon');
+    $( "div[id='div_id_country']" ).addClass('country-icon');
 });
 
 $(document).ready(function() {
@@ -35,4 +37,5 @@ $(document).ready(function() {
     $(".location-icon").prepend( "<i  class='material-icons'>location_city</i>" );
     $(".account-icon").prepend( "<i  class='material-icons'>account_circle</i>" );
     $(".security-icon").prepend( "<i  class='material-icons'>security</i>" );
+    $(".country-icon").prepend( "<i  class='material-icons'>language</i>" );
 });
