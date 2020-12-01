@@ -77,7 +77,7 @@
 						<li><a href="{% url 'account_login' %}">LOGIN</a></li>
 						{% endif %}
                         {% if request.user.is_staff %}
-                        <li><a href="{% url 'admin:index' %}">MUG ADMIN</a></li>
+                        <li><a class="ugly-blue" href="{% url 'admin:index' %}">MUG ADMIN</a></li>
                         {% endif %}
 					</ul>
 				</div>
@@ -96,7 +96,7 @@
 				<li><a href="{% url 'account_login' %}">LOGIN</a></li>
 				{% endif %}
                 {% if request.user.is_staff %}
-                <li><a href="{% url 'admin:index' %}">MUG ADMIN</a></li>
+                <li><a class="ugly-blue" href="{% url 'admin:index' %}">MUG ADMIN</a></li>
                 {% endif %}
                 <li><a class="sidenav-close" href="#!">CLOSE</a></li>
 			</ul>

@@ -35,4 +35,4 @@ $(document).ready(function() {
     $(".location-icon").prepend( "<i  class='material-icons'>location_city</i>" );
     $(".account-icon").prepend( "<i  class='material-icons'>account_circle</i>" );
     $(".security-icon").prepend( "<i  class='material-icons'>security</i>" );
-})
+});

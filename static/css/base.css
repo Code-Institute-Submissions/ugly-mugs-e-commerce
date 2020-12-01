@@ -12,6 +12,10 @@
     color: #9098b1;
 }
 
+.ugly-blue {
+    color: 40bfff !important;
+}
+
 /* ------------------------------- Special paddings/margins/text */
 
 html {
@@ -82,7 +86,7 @@ strong {
 
 .content-row {
     position: relative;
-    min-height: 40rem;
+    min-height: 35rem;
 }
 
 .content-img {
@@ -109,6 +113,10 @@ strong {
 
 .content-item {
     font-size: 1.4rem
+}
+
+a.content-item {
+    text-decoration: underline;
 }
 
 .border-top {
@@ -218,8 +226,20 @@ nav a {
     color: #ef2a82 !important;
 }
 
+.sidenav li>a.sidenav-close {
+    color: #ef2a82 !important;
+}
+
+.sidenav li>a.ugly-blue {
+    color: #40bfff !important;
+}
+
 .sidenav-trigger {
     margin: 0px 1rem 0px 0px !important;
+}
+
+ul li>a.ugly-blue {
+    color: #40bfff !important;
 }
 
 .cart-link {
@@ -254,6 +274,10 @@ span.badge.new {
     font-weight: 700;
 }
 
+.card-action {
+    padding-top: 0px !important;
+}
+
 .mug-name {
     font-weight: 700;
     font-size: 1rem;
@@ -274,6 +298,7 @@ span.badge.new {
 /* ------------------------------- Forms */
 
 input {
+    padding: 0px 0.5rem;
     border: 1px solid #bbbbbb !important;
     border-radius: 5px !important;
     -webkit-box-shadow: 0 1px 0 0 #bbbbbb !important;
@@ -297,6 +322,33 @@ select {
 [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
     opacity: 1 !important; 
     border-bottom: none !important;
+}
+
+/* ------------------------------- Quantity box */
+
+.qty-box {
+    display: flex;
+    align-items: center;
+}
+
+.qty {
+
+}
+
+.qty-div-dec {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.qty-input {
+    margin: 0.35rem 0px 0px 0px !important;
+    width: auto;
+}
+
+.dec {
+}
+
+.inc {
 }
 
 /* ------------------------------- Allauth */
